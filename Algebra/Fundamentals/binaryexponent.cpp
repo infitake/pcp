@@ -9,16 +9,16 @@ using namespace std;
 #define N 100005
 #define MOD 1000000007
 #define dd double
-#define pii pair<int,int>
-#define vec1 vector<int>
-#define vec2 vector<int,int>
-#define rep(i, n) for(int i = 0; i < n; i++)
-#define REP(i,a,b) for(int i=a;i<b;i++)
-#define rep1(i,b) for(int i=1;i<=b;i++)
+#define pii pair<ll,ll>
+#define vec1 vector<ll>
+#define vec2 vector<ll,ll>
+#define rep(i, n) for(ll i = 0; i < n; i++)
+#define REP(i,a,b) for(ll i=a;i<b;i++)
+#define rep1(i,b) for(ll i=1;i<=b;i++)
 #define pb push_back
 #define mp make_pair
 #define clr(x) x.clear()
-#define sz(x) ((int)(x).size())
+#define sz(x) ((ll)(x).size())
 #define S(x) scanf("%d",&(x))
 #define S2(x,y) scanf("%d%d",&(x),&(y))
 #define SL(x) scanf("%lld",&(x))
