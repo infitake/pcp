@@ -31,37 +31,23 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,x; cin>>t;
+	ll t,n; cin>>t;
 	while(t--){
 		cin>>n;
-		ll dif = n/2,count=0;
-		vec1 arr;
-		if(dif%2==0){
-			ll val1 = 2,val2 = 2;
-			ll mux=2;
-			for(ll i=0;i<dif;i++){
-				arr.pb(val1);
-				val1 = mux*2;
-				mux++;
+		ll arr[n];
+		ll ans=0;
+		rep(i,n) cin>>arr[i];
+		rep(i,n) {
+			ll j=i;
+			ll max_val=arr[i];
+			while(j<n && (arr[i]>0 && arr[j]>0) || (arr[i]<0 && arr[j]<0)){
+				max_val = max(max_val,arr[j]);
+				j++;
 			}
-			mux = 2;
-			for(ll i=dif;i<n-1;i++){
-				count++;
-				arr.pb((val2-1));
-				val2 = mux*2;
-				mux++;
-			}
-			val2 += count;
-			arr.pb(val2);
-			cout<<"YES"<<endl;
-			for(ll i=0;i<arr.size();i++)
-				cout<<arr[i]<<" ";
-			cout<<endl;
+			i=j-1;
+			ans += max_val;
 		}
-		if(count == 0){
-			cout<<"NO"<<endl;
-		}
-		
+		cout<<ans<<endl;
 	}
 	return 0;
 }

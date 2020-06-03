@@ -27,41 +27,35 @@ using namespace std;
 #define FT first
 #define SN second
 
+vector<bool> simpleSieve(int n){
+	std::vector<bool> is_prime(n+1,true);
+	is_prime[0]=false;
+	is_prime[1]=false;
+	for(int  i=2;i<=sqrt(n);i++){
+		if(is_prime[i]){
+			for(int j=i*i;j<n;j+=i){
+				is_prime[j]=false;
+			}
+		}
+	}
+	// for(int i=0;i<n;i++){
+	// 	cout<<i<<" "<<is_prime[i]<<" "<<endl;
+	// }
+	return is_prime;
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,x; cin>>t;
-	while(t--){
-		cin>>n;
-		ll dif = n/2,count=0;
-		vec1 arr;
-		if(dif%2==0){
-			ll val1 = 2,val2 = 2;
-			ll mux=2;
-			for(ll i=0;i<dif;i++){
-				arr.pb(val1);
-				val1 = mux*2;
-				mux++;
-			}
-			mux = 2;
-			for(ll i=dif;i<n-1;i++){
-				count++;
-				arr.pb((val2-1));
-				val2 = mux*2;
-				mux++;
-			}
-			val2 += count;
-			arr.pb(val2);
-			cout<<"YES"<<endl;
-			for(ll i=0;i<arr.size();i++)
-				cout<<arr[i]<<" ";
-			cout<<endl;
-		}
-		if(count == 0){
-			cout<<"NO"<<endl;
-		}
-		
+	ll t,n; 
+	cin>>n;
+	std::vector<bool> v;
+	v = simpleSieve(n);
+	
+	for(int i=0;i<n;i++){
+		cout<<i<<" "<<v[i]<<" "<<endl;
 	}
+	cout<<endl;
 	return 0;
 }

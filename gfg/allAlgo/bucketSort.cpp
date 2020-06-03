@@ -27,41 +27,40 @@ using namespace std;
 #define FT first
 #define SN second
 
+void bucketSort(float arr[],ll n){
+	std::vector<float> v[n];
+
+	for(ll i=0;i<n;i++){
+		ll val = n*arr[i];
+		v[val].pb(arr[i]);
+	}
+
+	for(ll i=0;i<n;i++){
+		sort(v[i].begin(),v[i].end());
+	}
+
+	ll index = 0;
+	for(ll i=0;i<n;i++){
+		for(ll j=0;j<v[i].size();j++){
+			arr[index++] = v[i][j];
+		}
+	}
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,x; cin>>t;
-	while(t--){
-		cin>>n;
-		ll dif = n/2,count=0;
-		vec1 arr;
-		if(dif%2==0){
-			ll val1 = 2,val2 = 2;
-			ll mux=2;
-			for(ll i=0;i<dif;i++){
-				arr.pb(val1);
-				val1 = mux*2;
-				mux++;
-			}
-			mux = 2;
-			for(ll i=dif;i<n-1;i++){
-				count++;
-				arr.pb((val2-1));
-				val2 = mux*2;
-				mux++;
-			}
-			val2 += count;
-			arr.pb(val2);
-			cout<<"YES"<<endl;
-			for(ll i=0;i<arr.size();i++)
-				cout<<arr[i]<<" ";
-			cout<<endl;
-		}
-		if(count == 0){
-			cout<<"NO"<<endl;
-		}
-		
-	}
+	ll t,n; cin>>n;
+	float arr[n];
+
+	rep(i,n)  cin>>arr[i];
+
+	bucketSort(arr,n);
+
+	rep(i,n) cout<<arr[i]<<" ";
+
+	cout<<endl;
+
 	return 0;
 }

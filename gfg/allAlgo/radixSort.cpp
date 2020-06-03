@@ -27,41 +27,58 @@ using namespace std;
 #define FT first
 #define SN second
 
+ll max(ll arr[],ll n){
+	ll mx = INT_MIN;
+	for(ll i=0;i<n;i++){
+		if(mx < arr[i])
+			mx = arr[i];
+	}
+	return mx;
+}
+
+void countSort(ll arr[],ll n,ll exp){
+
+	ll countarr[10];
+	ll outarr[n];
+
+	for(ll i=0;i<10;i++){
+		countarr[i]=0;
+	}
+
+
+	for(ll i=0;i<n;i++){
+		countarr[(arr[i]/exp)%10]++;
+	}
+	for(ll i=1;i<10;i++){
+		countarr[i] += countarr[i-1]; 
+	}
+	for(ll i=n-1;i>=0;i--){
+		outarr[countarr[(arr[i]/exp)%10]-1] = arr[i];
+		countarr[(arr[i]/exp)%10]--;
+	}
+	rep(i,n) arr[i]=outarr[i];
+}
+
+void radixSort(ll arr[],ll n){
+	ll mx = max(arr,n);
+
+	for(ll exp = 1;mx/exp>0;exp *= 10)
+		countSort(arr,n,exp);
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,x; cin>>t;
-	while(t--){
-		cin>>n;
-		ll dif = n/2,count=0;
-		vec1 arr;
-		if(dif%2==0){
-			ll val1 = 2,val2 = 2;
-			ll mux=2;
-			for(ll i=0;i<dif;i++){
-				arr.pb(val1);
-				val1 = mux*2;
-				mux++;
-			}
-			mux = 2;
-			for(ll i=dif;i<n-1;i++){
-				count++;
-				arr.pb((val2-1));
-				val2 = mux*2;
-				mux++;
-			}
-			val2 += count;
-			arr.pb(val2);
-			cout<<"YES"<<endl;
-			for(ll i=0;i<arr.size();i++)
-				cout<<arr[i]<<" ";
-			cout<<endl;
-		}
-		if(count == 0){
-			cout<<"NO"<<endl;
-		}
-		
-	}
+	ll t,n; cin>>n;
+	ll arr[n];
+	rep(i,n) cin>>arr[i];
+
+	radixSort(arr,n);
+
+	rep(i,n) cout<<arr[i]<<" ";
+
+	cout<<endl;
+
 	return 0;
 }

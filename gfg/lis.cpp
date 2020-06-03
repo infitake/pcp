@@ -1,8 +1,3 @@
-/******************************************
-* AUTHOR : RAVINDER YADAV *
-* NICK : INFINITY *
-* INSTITUTION : NIT KURUKSHETRA *
-******************************************/
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -27,41 +22,32 @@ using namespace std;
 #define FT first
 #define SN second
 
+ll lis(ll arr[],ll n){
+	ll dp[n];
+	rep(i,n) dp[i]=0;
+	dp[0]=1;
+	ll res = 0;
+	for(ll i=1;i<n;i++){
+		dp[i]=1;
+		for(ll j = 0 ;j<i;j++){
+			if(arr[j]<arr[i] && dp[j]+1>dp[i]){
+				dp[i]=dp[j]+1;
+			}
+		}
+	}
+	// rep(i,n) cout<<dp[i]<<" ";
+	sort(dp,dp+n);
+	return dp[n-1];
+}
+
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,x; cin>>t;
-	while(t--){
-		cin>>n;
-		ll dif = n/2,count=0;
-		vec1 arr;
-		if(dif%2==0){
-			ll val1 = 2,val2 = 2;
-			ll mux=2;
-			for(ll i=0;i<dif;i++){
-				arr.pb(val1);
-				val1 = mux*2;
-				mux++;
-			}
-			mux = 2;
-			for(ll i=dif;i<n-1;i++){
-				count++;
-				arr.pb((val2-1));
-				val2 = mux*2;
-				mux++;
-			}
-			val2 += count;
-			arr.pb(val2);
-			cout<<"YES"<<endl;
-			for(ll i=0;i<arr.size();i++)
-				cout<<arr[i]<<" ";
-			cout<<endl;
-		}
-		if(count == 0){
-			cout<<"NO"<<endl;
-		}
-		
-	}
+	ll t,n; cin>>n;
+	ll arr[n];
+	rep(i,n) cin>>arr[i];
+	cout<<lis(arr,n)<<endl;
 	return 0;
 }

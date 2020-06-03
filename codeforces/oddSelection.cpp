@@ -33,33 +33,21 @@ int main() {
 	//ios_base& scientific (ios_base& str);
 	ll t,n,x; cin>>t;
 	while(t--){
-		cin>>n;
-		ll dif = n/2,count=0;
-		vec1 arr;
-		if(dif%2==0){
-			ll val1 = 2,val2 = 2;
-			ll mux=2;
-			for(ll i=0;i<dif;i++){
-				arr.pb(val1);
-				val1 = mux*2;
-				mux++;
-			}
-			mux = 2;
-			for(ll i=dif;i<n-1;i++){
-				count++;
-				arr.pb((val2-1));
-				val2 = mux*2;
-				mux++;
-			}
-			val2 += count;
-			arr.pb(val2);
-			cout<<"YES"<<endl;
-			for(ll i=0;i<arr.size();i++)
-				cout<<arr[i]<<" ";
-			cout<<endl;
+		cin>>n>>x;
+		ll arr[n];
+		ll is_odd = 0,is_even = 0;
+		rep(i,n){
+			cin>>arr[i];
+			if(arr[i]%2==0) is_even++;
+			else is_odd++;
 		}
-		if(count == 0){
-			cout<<"NO"<<endl;
+
+		if(x%2==1){
+			if(is_odd%2 == 1) cout<<"YES"<<endl;
+			else cout<<"NO"<<endl;
+		} else{
+			if((is_odd%2 == 1) && (is_even%2 == 1)) cout<<"YES"<<endl;
+			else cout<<"NO"<<endl;
 		}
 		
 	}

@@ -31,37 +31,47 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,x; cin>>t;
+	ll t,n,m,k; cin>>t;
 	while(t--){
-		cin>>n;
-		ll dif = n/2,count=0;
-		vec1 arr;
-		if(dif%2==0){
-			ll val1 = 2,val2 = 2;
-			ll mux=2;
-			for(ll i=0;i<dif;i++){
-				arr.pb(val1);
-				val1 = mux*2;
-				mux++;
-			}
-			mux = 2;
-			for(ll i=dif;i<n-1;i++){
-				count++;
-				arr.pb((val2-1));
-				val2 = mux*2;
-				mux++;
-			}
-			val2 += count;
-			arr.pb(val2);
-			cout<<"YES"<<endl;
-			for(ll i=0;i<arr.size();i++)
-				cout<<arr[i]<<" ";
-			cout<<endl;
+		cin>>n>>m>>k;
+		ll v= n/k;
+		if(m == 0) {
+			cout<<"0"<<endl;
+			continue;
 		}
-		if(count == 0){
-			cout<<"NO"<<endl;
+		if(v>m){
+			cout<<m<<endl;
+		} else{
+			ll diff = m-v,max = v;
+			ll arr[k],i=1;
+			for(ll j=1;j<=k-1;j++){
+			arr[j]=0;
 		}
-		
+			while(diff>0){
+				if(i>=(k-1)) i = (i%(k-1));
+				arr[i]++;
+				// cout<<"i value"<<i<<"arr "<<arr[i]<<endl;
+				i++;
+				diff--;
+			}
+			// cout<<"after loop";
+			// for(ll p=1;p<=k-1;p++) cout<<arr[p]<<endl;
+			// sort(arr,arr+(k-1));
+			ll min = INT_MIN;
+			for(ll p = 1;p<=k-1;p++) {
+				if(min<arr[p])
+					min = arr[p];
+			}
+			// ll min = arr[k-1];
+			// cout<<"min"<<min<<"max"<<max<<endl;
+			cout<<(max-min)<<endl;
+			// if((dif-1)>0){
+			// 	cout<<"1"<<endl;
+			// }else{
+			// 	cout<<"0"<<endl;
+			// }
+		}
+		// cout<<"after above"<<endl;
 	}
 	return 0;
 }
