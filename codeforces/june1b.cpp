@@ -26,16 +26,29 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t; cin>>t;
+	string str;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
+		cin>>str;
+		ll len = str.size();
+		ll zero=0,one=0;
+		for(ll i=0;i<len;i++){
+			if(str[i] == '1') one++;
+			else zero++;
 		}
-		cout<<endl;
+		ll ans = min(one,zero),zero_done=0,one_done=0;
+		for(ll i=0;i<len;i++){
+			if(str[i] == '1'){
+				one_done++;
+				one--;
+			}else{
+				zero_done++;
+				zero--;
+			}
+			ans = min(ans,min(zero_done+one,one_done+zero));
+		}
+		cout<<ans<<endl;
+		
 	}
 	return 0;
 }

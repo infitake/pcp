@@ -18,24 +18,19 @@ using namespace std;
 #define S2(x,y) scanf("%d%d",&(x),&(y))
 #define SL(x) scanf("%lld",&(x))
 #define SL2(x) scanf("%lld%lld",&(x),&(y))
-#define P(x) printf("%d\n",(x))
+#define P(x) prllf("%d\n",(x))
 #define FT first
 #define SN second
 
-int main() {
+ll main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
-		}
-		cout<<endl;
+		cin>>n;
+		if(n%4 != 0) cout<<"NO"<<endl;
+		else cout<<"YES"<<endl;
 	}
 	return 0;
 }

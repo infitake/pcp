@@ -26,16 +26,19 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n,k; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
+		cin>>n>>k;
+		ll arr[n];
+		rep(i,n) cin>>arr[i];
+		ll loss=0;
+		rep(i,n) {
+			if(arr[i]>k){
+				loss += (arr[i]-k);
+			}
 		}
-		cout<<endl;
+		cout<<loss<<endl;
+		
 	}
 	return 0;
 }

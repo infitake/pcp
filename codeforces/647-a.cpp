@@ -18,24 +18,42 @@ using namespace std;
 #define S2(x,y) scanf("%d%d",&(x),&(y))
 #define SL(x) scanf("%lld",&(x))
 #define SL2(x) scanf("%lld%lld",&(x),&(y))
-#define P(x) printf("%d\n",(x))
+#define P(x) prllf("%d\n",(x))
 #define FT first
 #define SN second
 
-int main() {
+ll solve(ll b,ll a){
+	ll ans=0;
+	while(a > b) {
+    if(8*b <= a) {
+       b = b*8; ans++; 
+    }
+    else if(4*b <= a) {
+        b = b*4; ans++;
+    }
+    else if(2*b <= a) {
+        b = b*2; ans++;
+    }
+    else break;
+    }
+    if(a ==b) return ans;
+	return -1;
+}
+// 8863319836238788 283626234759641216
+ll findOperation(ll a,ll b){
+	if(a == b) return 0;
+	if(a<b) return solve(a,b);
+	else return solve(b,a);
+}
+
+ll main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,a,b; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
-		}
-		cout<<endl;
+		cin>>a>>b;
+		cout<<findOperation(a,b)<<endl;
 	}
 	return 0;
 }

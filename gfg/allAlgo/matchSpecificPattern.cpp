@@ -22,20 +22,24 @@ using namespace std;
 #define FT first
 #define SN second
 
+ll reachScore(ll arr[],ll n,ll w){
+	if(w == 0) return 1;
+	if(n<0 && w>0) return 0;
+	if(w<0) return 0;
+	if(w<arr[n-1]) return reachScore(arr,n-1,w);
+	return reachScore(arr,n,w-arr[n-1])+reachScore(arr,n-1,w);
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
-		}
-		cout<<endl;
+		cin>>n;
+		ll arr[3]={3,5,10};
+		cout<<reachScore(arr,3,n)<<endl;
+		
 	}
 	return 0;
 }

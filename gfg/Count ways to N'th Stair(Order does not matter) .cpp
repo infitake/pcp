@@ -22,20 +22,27 @@ using namespace std;
 #define FT first
 #define SN second
 
+ll countstair(ll arr[],ll n,ll w){
+	if(w==0) return 1;
+	if(n<0&&w>0) return 0;
+	if(n<0&& w<0) return 0;
+	return countstair(arr,n-1,w-arr[n-1])+countstair(arr,n-1,w);
+}
+
 int main() {
+	#ifndef ONLINE_JUDGE
+    	freopen("input.txt", "r", stdin);
+    	freopen("output.txt", "w", stdout);
+	#endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
-		}
-		cout<<endl;
+		cin>>n;
+		ll arr[]={1,2};
+		ll w = 2;
+		cout<<countstair(arr,w,n)<<endl;
 	}
 	return 0;
 }

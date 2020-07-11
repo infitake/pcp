@@ -21,21 +21,22 @@ using namespace std;
 #define P(x) printf("%d\n",(x))
 #define FT first
 #define SN second
+#define mod %
 
 int main() {
+	#ifndef ONLINE_JUDGE
+    	freopen("input.txt", "r", stdin);
+    	freopen("output.txt", "w", stdout);
+	#endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n,x,y; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
-		}
-		cout<<endl;
+		cin>>x>>y>>n;
+		ll val = (y-(n mod x));
+		if(val>0) cout<<(n-(x-val))<<endl;
+		else cout<<(n+val)<<endl;
 	}
 	return 0;
 }

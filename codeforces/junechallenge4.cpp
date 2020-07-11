@@ -22,20 +22,45 @@ using namespace std;
 #define FT first
 #define SN second
 
+string decimalToBinary(ll n) 
+{ 
+  	string db="";
+    for (ll i = 31; i >= 0; i--) { 
+        ll k = n >> i; 
+        if (k & 1) 
+            db += '1';
+        else
+            db += '0';
+    }
+  
+    return db; 
+} 
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n; cin>>t;
+	string nstring;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
+		cin>>n;
+		if(n&1){
+			cout<<n/2<<endl;
+		}else{
+			nstring = decimalToBinary(n);
+			ll len = nstring.size();
+			ll count=0;
+			for(ll i=len-1;i>=0;i--){
+				if(nstring[i] == '1') break;
+				count++;
+			}
+			while(count>0){
+				n /= 2;
+				count--;
+			}
+			cout<<n/2<<endl;
 		}
-		cout<<endl;
+		
 	}
 	return 0;
 }

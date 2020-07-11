@@ -22,20 +22,52 @@ using namespace std;
 #define FT first
 #define SN second
 
+ll kadane(ll temp[],ll n){
+	ll sum=0,maxsum=INT_MIN;
+	for(ll i=0;i<n;i++){
+		sum += temp[i];
+		if(sum<0) sum=0;
+		if(sum>maxsum) maxsum = sum;
+	}
+	return maxsum;
+}
+
+ll maxsumrect(vector<vector<ll>> arr,ll n,ll m){
+	ll sum=0,maxsum=INT_MIN;
+	ll temp[n];
+	for(ll i=0;i<m;i++){
+		memset(temp,0,sizeof(temp));
+		for(ll j=i;j<m;j++){
+			for(ll k=0;k<n;k++)
+				temp[k] += arr[k][j];
+			sum = kadane(temp,n);
+			if(sum>maxsum) maxsum = sum;
+		}
+	}
+	return maxsum;
+}
+
 int main() {
+	#ifndef ONLINE_JUDGE
+    	freopen("input.txt", "r", stdin);
+    	freopen("output.txt", "w", stdout);
+	#endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n,m,a; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
+		cin>>n>>m;
+		vector<vector<ll>> arr;
+		rep(i,n){
+			vector<ll> v1;
+			rep(j,m){
+				cin>>a;
+				v1.pb(a);
+			}
+			arr.pb(v1);
 		}
-		cout<<endl;
+		cout<<maxsumrect(arr,n,m)<<endl;
 	}
 	return 0;
 }

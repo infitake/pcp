@@ -22,19 +22,41 @@ using namespace std;
 #define FT first
 #define SN second
 
+void postorderutil(ll in[],ll pre[],ll l,ll r,map<ll,ll> &mp,ll &index){
+	if(l>r) return;
+	ll ind = mp[pre[index++]];
+	postorderutil(in,pre,l,ind-1,mp,index);
+	postorderutil(in,pre,ind+1,r,mp,index);
+	cout<<in[ind]<<" ";
+}
+
+void postorder(ll in[],ll pre[],ll n){
+	map<ll,ll> mp;
+	rep(i,n){
+		mp[in[i]] = i;
+	}
+	ll c=0;
+	postorderutil(in,pre,0,n-1,mp,c);
+}
+
 int main() {
+	#ifndef ONLINE_JUDGE
+    	freopen("input.txt", "r", stdin);
+    	freopen("output.txt", "w", stdout);
+	#endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
+		cin>>n;
+		ll pre[n],in[n];
+		rep(i,n) {
+			cin>>pre[i];
+			in[i]=pre[i];
 		}
+		sort(in,in+n);
+		postorder(in,pre,n);
 		cout<<endl;
 	}
 	return 0;

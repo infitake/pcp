@@ -26,16 +26,27 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n; cin>>t;
+	string arr;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
+		cin>>arr;
+		ll len = arr.size();
+		ll countx=0,county=0;
+		for(ll i = 0;i<len;i++){
+			if(arr[i] == 'x') countx++;
+			else county++;
 		}
-		cout<<endl;
+		if(county == 0 || countx==0) {
+			cout<<"0"<<endl;
+			continue;
+		}
+		ll pair=0;
+		for(ll i=len-1;i>=0;i--){
+			if((arr[i] == 'x' && i>=0 && arr[i-1] == 'y') || (arr[i] == 'y' && i>=0 && arr[i-1] == 'x')){
+				pair++;	i--;
+			}
+		}
+		cout<<pair<<endl;
 	}
 	return 0;
 }

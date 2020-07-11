@@ -41,15 +41,26 @@ int main() {
 			if(arr[i]%2==0) is_even++;
 			else is_odd++;
 		}
-
-		if(x%2==1){
-			if(is_odd%2 == 1) cout<<"YES"<<endl;
-			else cout<<"NO"<<endl;
-		} else{
-			if((is_odd%2 == 1) && (is_even%2 == 1)) cout<<"YES"<<endl;
-			else cout<<"NO"<<endl;
+		if (is_odd == 0) {
+		    cout << "No"<<endl;
+		    continue;
 		}
-		
-	}
+		if (x <= is_odd) {
+		    if (x & 1) cout << "Yes"<<endl;
+		    else {
+		      if (is_even >= 1) cout << "Yes"<<endl;
+		      else cout << "No" <<endl;
+		    }
+		}
+		else {
+			if(is_odd & 1) {
+		    if (is_even >= x - is_odd) cout << "Yes"<<endl;
+		    else cout << "No"<<endl;
+		} else {
+		    if (is_even >= x - is_odd + 1) cout << "Yes"<<endl;
+		    else cout << "No" <<endl;
+		}
+	}	
+			}
 	return 0;
 }

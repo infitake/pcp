@@ -26,16 +26,36 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,a,b; cin>>t;
+	ll t,n; cin>>t;
 	while(t--){
-		cin>>n>>a>>b;
-		ll same = a-b;
-		string str;
-		char first = 'a';
-		for(ll i=1;i<=n;i++){
-			cout<<char('a'+(i-1)%b);
+		cin>>n;
+		ll arr[n];
+		ll fifth=0;
+		rep(i,n){
+			cin>>arr[i];
+			if(arr[i] == 15) fifth++;
 		}
-		cout<<endl;
+		if(arr[0] != 5){
+			cout<<"NO"<<endl;
+			continue;
+		}
+		ll get=0,back=0,have=0,flag=0;
+		rep(i,n){
+			if(arr[i] != 5){
+			back = arr[i]-5;
+			if(have<back){
+				cout<<"NO"<<endl;
+				flag=1;
+				break;
+			} else{
+				have -= back;
+			}
+			if(fifth != 0) have += 5;
+		}else{
+				have += arr[i];
+			}
+		}
+		if(!flag) cout<<"YES"<<endl;
 	}
 	return 0;
 }
