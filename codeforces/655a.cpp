@@ -23,15 +23,27 @@ using namespace std;
 #define SN second
 
 int main() {
-	#ifndef ONLINE_JUDGE
-    	freopen("input.txt", "r", stdin);
-    	freopen("output.txt", "w", stdout);
-	#endif
+	// #ifndef ONLINE_JUDGE
+ //    	freopen("input.txt", "r", stdin);
+ //    	freopen("output.txt", "w", stdout);
+	// #endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll i;
-	cin>>i;
-	cout<<"hello "<<i<<endl;
+	ll t,n; cin>>t;
+	while(t--){
+		cin>>n;
+		// ll arr[n];
+		// ll j=1;
+		// for(ll i=0;i<n;i++){
+		// 	arr[i]=j;
+		// 	j+=2;
+		// }
+		for(ll i=0;i<n;i++){
+			cout<<"1"<<" ";
+		}
+		cout<<endl;
+		
+	}
 	return 0;
 }
