@@ -140,7 +140,7 @@ int main() {
 	// printLevelOrder(root);
 	// ll val = diameterTree(root,&h);
 	// cout<<" height "<<h;
-	cout<<height(root);
+	// cout<<height(root);
 	cout<<endl;
 
 	return 0;

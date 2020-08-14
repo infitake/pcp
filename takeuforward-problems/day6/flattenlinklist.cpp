@@ -7,13 +7,13 @@ using namespace std;
 struct Node { 
 	int data; 
 	struct Node* right; 
-	struct Node* down; 
+	struct Node* left; 
 
 	Node(int x) 
 	{ 
 		data = x; 
 		right = NULL; 
-		down = NULL; 
+		left = NULL; 
 	} 
 }; 
 
@@ -23,7 +23,7 @@ void printList(Node* Node)
 { 
 	while (Node != NULL) { 
 		printf("%d ", Node->data); 
-		Node = Node->down; 
+		Node = Node->left; 
 	} 
 } 
 
@@ -53,7 +53,7 @@ Node* flatten(Node* root)
 		pq; 
 
 	// Push the head nodes of each 
-	// downward linked list 
+	// leftward linked list 
 	while (ptr != NULL) { 
 		pq.push(ptr); 
 		ptr = ptr->right; 
@@ -72,8 +72,8 @@ Node* flatten(Node* root)
 		// Push the next node pointed by 
 		// the current node into heap 
 		// if it is not null 
-		if (temp->down != NULL) { 
-			pq.push(temp->down); 
+		if (temp->left != NULL) { 
+			pq.push(temp->left); 
 		} 
 
 		// Create new linked list 
@@ -83,7 +83,7 @@ Node* flatten(Node* root)
 			ptr = temp; 
 		} 
 		else { 
-			ptr->down = temp; 
+			ptr->left = temp; 
 			ptr = temp; 
 		} 
 	} 
@@ -100,7 +100,7 @@ void push(Node** head_ref,
 	Node* new_node = (Node*)malloc(sizeof(Node)); 
 	new_node->right = NULL; 
 	new_node->data = new_data; 
-	new_node->down = (*head_ref); 
+	new_node->left = (*head_ref); 
 
 	(*head_ref) = new_node; 
 } 

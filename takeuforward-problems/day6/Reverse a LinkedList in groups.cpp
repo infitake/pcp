@@ -81,10 +81,10 @@ struct Node *grpreverse(struct Node *root,int k){
 
 // Method 2:
 //  we have used a stack which will store the nodes of the given linked list.
-//   Firstly, push the k elements of the linked list in the stack.
-//    Now pop elements one by one and keep track of the previously popped node.
-//     Point the next pointer of prev node to top element of stack. 
-//     Repeat this process, until NULL is reached.
+//  Firstly, push the k elements of the linked list in the stack.
+//  Now pop elements one by one and keep track of the previously popped node.
+//  Point the next pointer of prev node to top element of stack. 
+//  ////////////Repeat this process, until NULL is reached.
 
 // This algorithm uses O(k) extra space.
 struct Node* Reverse(struct Node* head, int k) 

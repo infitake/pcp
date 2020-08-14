@@ -2,28 +2,28 @@
 using namespace std;
 
 // Method 1;
-// int rotatedarrayx(vector<int> &arr,int n,int k){
-// 	int ind;
-// 	for(int i=0;i<n-1;i++){
-// 		if(arr[i]>arr[i+1]){
-// 			ind=i+1;
-// 			break;
-// 		}
-// 	}
-// 	int l,r;
-// 	if(k>=arr[0] && k<=arr[ind-1]) {
-// 		l=0,r=ind-1;
-// 	}else if(k>=arr[ind] && k<=arr[n-1]){
-// 		l=ind;r=n-1;
-// 	}
-	// while(l<=r){
-	// 	int mid = l+(r-l)/2;
-	// 	if(arr[mid]==k) return mid;
-	// 	if(arr[mid]<k) l=mid+1;
-	// 	else r= mid;
-	// }
-	// return -1;
-// }
+int rotatedarrayx(vector<int> &arr,int n,int k){
+	int ind;
+	for(int i=0;i<n-1;i++){
+		if(arr[i]>arr[i+1]){
+			ind=i+1;
+			break; 
+		}
+	}
+	int l,r;
+	if(k>=arr[0] && k<=arr[ind-1]) {
+		l=0,r=ind-1;
+	}else if(k>=arr[ind] && k<=arr[n-1]){
+		l=ind;r=n-1;
+	}
+	while(l<=r){
+		int mid = l+(r-l)/2;
+		if(arr[mid]==k) return mid;
+		if(arr[mid]<k) l=mid+1;
+		else r= mid;
+	}
+	return -1;
+}
 
 // Method 2:
 // All solutions provided here assume that all elements in array are distinct.

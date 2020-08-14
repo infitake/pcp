@@ -1,0 +1,151 @@
+coding round questions to be done:
+
+Graph based question (BFS) :
+https://www.geeksforgeeks.org/shortest-distance-two-cells-matrix-grid/    ok
+Matrix based question : 
+https://www.geeksforgeeks.org/search-in-row-wise-and-column-wise-sorted-matrix/ (ok in this matrix the upper left is the smallest no and down right is largest number and we start with left top and bottom and if value is small then goes up otherwise right)
+
+
+https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/ (ok)
+https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/ (ok think with recurision)
+At first I couldn’t give the space optimized solution . He gave me some hints and ultimately I could give the space optimized solution .
+ 
+
+https://leetcode.com/problems/k-th-symbol-in-grammar/ (ok using mid logic)
+I could give the recursive solution for this but it was not space optimized , so he gave me several hints . I followed them ,even went in the right direction but couldn’t come up with the correct solution . However I shared my thought process throughout the discussion .
+
+Dynamic Programming Number of ways to get a given sum with n number of m faced dices. (using dp)
+
+
+Question-  Search an element in a sorted and rotated array (using binary search 2 times first for finding point of rotation and other for finding elment) 
+
+ https://www.geeksforgeeks.org/find-number-of-islands/ (ok dfs and increse count after dfs no of connected commpoenet) 
+
+https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/ (ok)
+
+ https://www.geeksforgeeks.org/previous-greater-element/ (ok)
+
+ https://www.geeksforgeeks.org/next-greater-element/ (ok)
+
+ https://www.geeksforgeeks.org/round-robin-scheduling-with-different-arrival-times . (for interview)
+
+ Finding path in matrix.(ok)
+
+  https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/  (ok)
+
+   https://www.geeksforgeeks.org/minimum-time-required-so-that-all-oranges-become-rotten/ (ok)
+
+    https://www.geeksforgeeks.org/check-if-value-exists-in-level-order-sorted-complete-binary-tree/ (ok)
+
+    https://www.geeksforgeeks.org/minimum-cost-of-reducing-array-by-merging-any-adjacent-elements-repetitively/ (ok same like mcm problem dp)
+
+    problem 1 – https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/ (ok using vector pair)
+
+    Number of connected components in an undirected graph (ok)
+
+    https://leetcode.com/problems/odd-even-linked-list/  (ok from even to odd and odd to even)
+
+    https://www.geeksforgeeks.org/counting-inversions (how far the array from being sorted) (ok using set upperbound distance)
+
+    https://www.geeksforgeeks.org/number-of-ways-to-get-a-given-sum-with-n-number-of-m-faced-dices/ (ok watch later)
+
+    reconstruct tree using only one type of traversal.
+
+    https://www.geeksforgeeks.org/construct-a-special-tree-from-given-preorder-traversal/ (ok) 
+
+     https://www.geeksforgeeks.org/find-k-closest-elements-given-value/ with first O(n) then the optimised one with O(logn+k). (ok)
+
+     https://www.geeksforgeeks.org/count-of-substrings-of-length-k-with-exactly-k-distinct-characters/ (ok use of map and check map size)
+ 
+     Find maximum sum strictly increasing subarray (ok kadane algo)
+
+     https://www.geeksforgeeks.org/find-the-k-closest-points-to-origin-using-priority-queue/ (ok priority queue)
+
+     Top N competitors (not get the question)
+
+     Convert BST to Doubly Linked List without deforming tree and without using extra space (ok using pre and head 2 extra pointer)
+
+     https://www.geeksforgeeks.org/find-zeroes-to-be-flipped-so-that-number-of-consecutive-1s-is-maximized/ (ok use some kind of kadane)
+
+     https://www.geeksforgeeks.org/minimum-swap-required-convert-binary-tree-binary-search-tree/ (ok change to inorder and find min swap in array to be sorted)
+	clone the linked list
+     https://www.geeksforgeeks.org/minimum-length-subarray-sum-greater-given-value/ (ok kadane)
+
+     Find the string formed by joining k consecutive nodes of linked list
+
+
+     1. infix-to-prefix-conversion-using-two-stacks (ok)
+2. nth-node-from-the-end-of-a-linked-list (ok)
+3. swap-kth-node-from-beginning-with-kth-node-from-end-in-a-linked-list (good question)(we have to use node and previous node from both the node to solve )
+
+1. Remove unnecessary brackets from expression (ok using infix to postfix then using queue and stack over postfix)
+ex: input (a+b)+((c+d)) and output should be (a+b)+(c+d).
+2. Find the longest sub string length which is in Alphabetical order.(ok same as lis but in alphabetical order)
+ex: input “cfaxy” and output should be 3(axy).
+
+
+Q1). https://www.geeksforgeeks.org/counting-inversions(ok)
+Q2).Find the position of leftmost and the rightmost set bit, also the number of total set bits.(ok lsb 2's compliment msb log2)
+
+ https://www.geeksforgeeks.org/modify-binary-tree-get-preorder-traversal-using-right-pointers (ok good questions)
+
+ . Find the strings from an array which are not prefix of any other string. 
+
+
+ Q1). At first he asked me about cache and its types and then full implementation. https://www.geeksforgeeks.org/lru-cache-implementation/ (ok)
+Q2). https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station(ok)
+
+Q1). https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
+
+Q2). https://www.geeksforgeeks.org/construct-a-special-tree-from-given-preorder-traversal/(ok)
+ 
+
+Q1). https://www.geeksforgeeks.org/find-triplets-array-whose-sum-equal-zero/
+
+Q2). https://www.geeksforgeeks.org/find-union-and-intersection-of-two-unsorted-arrays/
+
+https://www.geeksforgeeks.org/trapping-rain-water/ (ok)
+Maximum product:
+https://www.geeksforgeeks.org/find-maximum-product-of-a-triplet-in-array/
+
+https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/
+https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/ (ok)
+
+
+Find the node violating binary search tree properties
+
+https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/ (ok)
+
+similar to above post.
+
+2. Print leaf nodes of n-ary tree from left to right
+
+
+1. https://www.geeksforgeeks.org/zigzag-tree-traversal/ (ok)
+
+ finding maximum sub-array sum.(ok)
+
+
+ 1. https://www.geeksforgeeks.org/snake-ladder-problem-2/
+
+2. https://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/ 
+
+3. LRU cache
+
+1). https://www.geeksforgeeks.org/find-triplets-array-whose-sum-equal-zero/
+
+Q2). https://www.geeksforgeeks.org/find-union-and-intersection-of-two-unsorted-arrays/
+
+ Two strings are given check if anagram of one string is contained in other string.
+
+ https://www.geeksforgeeks.org/the-celebrity-problem/
+
+Twist: this time celebrity may or may not know some persons in the party. Suggested him O(n^2) approach. Using stack we can minimize comparisons.
+
+Ques2: Given an unsorted array that contains even number of occurrences for all numbers except two numbers. Find the two numbers which have odd occurrences in O(n) time complexity and O(1) extra space. Told him that I know its approach already. He asked me for the approach.
+
+https://www.geeksforgeeks.org/find-the-two-numbers-with-odd-occurences-in-an-unsorted-array/
+
+Ques3: An array of size n-1 is given contains numbers from 0 to n. Find the two missing numbers in O(n) time and O(1) space. Suggested him method given in :
+
+https://www.geeksforgeeks.org/find-the-smallest-positive-number-missing-from-an-unsorted-array/

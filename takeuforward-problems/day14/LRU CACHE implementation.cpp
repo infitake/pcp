@@ -38,6 +38,8 @@ void LRU::refer(int x){
 	}
 	else
 		dq.erase(mp[x]);
+
+	
 	dq.push_front(x);
 	mp[x]=dq.begin();
 

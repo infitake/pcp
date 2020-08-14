@@ -49,6 +49,7 @@ void printNGE(int arr[], int n) {
     s.pop(); 
   } 
 } 
+
 int main() {
 	#ifndef ONLINE_JUDGE
     	freopen("input.txt", "r", stdin);

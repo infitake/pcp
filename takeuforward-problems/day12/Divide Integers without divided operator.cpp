@@ -5,17 +5,17 @@ using namespace std;
 // Method 1:
 // Approach : Keep subtracting the divisor from dividend until dividend becomes less than divisor. 
 // The dividend becomes the remainder, and the number of times subtraction is done becomes the quotient.
-// int divide(int n,int k){
-// 	int sign = ((n<0) ^ (k<0))?-1:1;
-// 	n=abs(n);
-// 	k=abs(k);
-// 	int count=0;
-// 	while(n>=k){
-// 		n -= k;
-// 		count++;
-// 	}
-// 	return sign * count;
-// }
+int divide(int n,int k){
+	int sign = ((n<0) ^ (k<0))?-1:1;
+	n=abs(n);
+	k=abs(k);
+	int count=0;
+	while(n>=k){
+		n -= k;
+		count++;
+	}
+	return sign * count;
+}
 
 // Time complexity : O(a)
 // Auxiliary space : O(1)

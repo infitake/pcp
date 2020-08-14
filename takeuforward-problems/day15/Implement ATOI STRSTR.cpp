@@ -10,7 +10,7 @@ int stringtoint(string str){
 	    }
 		int k = (s-'0');
 		if(k>=0 && k<=9){
-			val = val*10 + (s-'0');
+			val = val*10 + k;
 		}else{
 			return -1;
 		}

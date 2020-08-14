@@ -1,5 +1,5 @@
-// // A recursive program in C++ 
-// // to solve Sudoku problem 
+// // // A recursive program in C++ 
+// // // to solve Sudoku problem 
 // #include <bits/stdc++.h> 
 // using namespace std; 
 
@@ -11,8 +11,8 @@
 // // Size will be NxN 
 // #define N 9 
 
-// // Checks whether it will be legal 
-// // to assign num to the given row, col 
+// // // Checks whether it will be legal 
+// // // to assign num to the given row, col 
 // bool isSafe(int grid[N][N]) 
 // { 
 // 	// Hashmap for row column and boxes 
@@ -47,11 +47,11 @@
 // 	} 
 // } 
 
-// /* Takes a partially filled-in grid and attempts 
+//  Takes a partially filled-in grid and attempts 
 // to assign values to all unassigned locations in 
 // such a way to meet the requirements for 
 // Sudoku solution (non-duplication across rows, 
-// columns, and boxes) */
+// columns, and boxes) 
 // bool SolveSudoku( 
 // 	int grid[N][N], int i, int j) 
 // { 
@@ -91,7 +91,7 @@
 // 	return false; 
 // } 
 
-// // Driver Code 
+// // // Driver Code 
 // int main() 
 // { 
 // 	// 0 means unassigned cells 

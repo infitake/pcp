@@ -1,0 +1,379 @@
+https://leetcode.com/discuss/interview-question/338412/Goldman-Sachs-or-Online-Assessment-2019
+
+https://leetcode.com/problems/friend-circles/
+https://leetcode.com/problems/last-substring-in-lexicographical-order/
+
+https://leetcode.com/discuss/interview-question/334666/Goldman-Sachs-or-OA-2019
+
+Given a string, find the lexicographically largest substring. (Can't quite remember description, see example below)
+eg)
+
+abcdefabc --> fabc
+zabcdzt --> zt
+dcba --> dcba
+
+https://leetcode.com/discuss/interview-question/724612/Goldman-Sachs-or-New-Grad-or-OA-2021
+
+https://leetcode.com/discuss/interview-question/699973/Goldman-Sachs-or-OA-or-Turnstile
+
+https://leetcode.com/discuss/interview-question/774675/Goldman-Sachs-or-Online-Screeing-or-SPY-AGENCY
+
+https://leetcode.com/discuss/interview-question/739052/Goldman-Sach-2020-New-Analyst-Post-Lodon-office-Coding-1st-round
+
+
+
+https://leetcode.com/discuss/interview-question/743894/GOLDMAN-SACH-test-question
+
+https://leetcode.com/discuss/interview-question/743595/Goldman-Sachs-Online-coding
+
+https://leetcode.com/discuss/interview-question/334671/Goldman-Sachs-or-Online-Assessment-July-2019
+
+https://leetcode.com/discuss/interview-question/724617/Goldman-Sachs-or-New-Grad-or-OA-2021
+
+his question was asked in goldman sach test.
+
+An array of costs was given. You can either take two jumps forward or one jump backward. If you land on a particular index, you have to add the cost to your total. Find the minimum cost needed to cross the array or reach the end of the array.
+
+this question is similar to the below given question. how can we solve this goldman sach problem.?
+please respond.
+thankyou
+https://leetcode.com/problems/min-cost-climbing-stairs/
+edit : as per comment i added other questions
+Q2You are the owner of a news channel and you have a show which starts at 0 and ends at M. You have N number of advertisements and each ad has an effectiveness value associated with it which is given in an array of size ‘n’ in the format [v1, v2, …, vn]. The time when the ads can be shown is given in the format [(x1, y1), (x2, y2), …, (xn, yn)], where ith tuple in the array denotes the timing of the ith ad in the format (startTime, endTime). You have to maximize the sum of the effectiveness values of the ads if the minimum time gap between two advertisements is 4 min. So, if you select to show an ad having timings as (1,5), then you cannot show the next ad before 10. So next ad (9,14) cannot be possible, but ad (10,14) can be. Constraints: m>=xi,yi>=0
+
+For example, m = 20,
+
+Ads: [(6, 9), (9, 11), (11, 14), (14, 18)]
+
+Effectiveness values are [9, 10, 6, 7],
+
+Ans: ad 0 and ad 4 (zero-based-indexing) Max. effectiveness = 16
+
+Q3 this question was somewhat related to bipartite graph.. i dont remember exactly
+
+
+Round 1: Online Coding
+
+The round was conducted on Hackerrank.  600-700 students sat for the exam. This round comprised of a 2-hour long online test and had 4 sections:
+
+Section 1: 3 coding questions:
+
+1. You are the owner of a news channel and you have a show which starts at 0 and ends at M. You have N number of advertisements and each ad has an effectiveness value associated with it which is given in an array of size ‘n’ in the format [v1, v2, …, vn]. The time when the ads can be shown is given in the format [(x1, y1), (x2, y2), …, (xn, yn)], where ith tuple in the array denotes the timing of the ith ad in the format (startTime, endTime). You have to maximize the sum of the effectiveness values of the ads if the minimum time gap between two advertisements is 4 min. So, if you select to show an ad having timings as (1,5), then you cannot show the next ad before 10. So next ad (9,14) cannot be possible, but ad (10,14) can be. Constraints: m>=xi,yi>=0
+
+For example, m = 20,
+
+
+
+
+Ads: [(6, 9), (9, 11), (11, 14), (14, 18)]  
+
+Effectiveness values are [9, 10, 6, 7],
+
+Ans: ad 0 and ad 4 (zero-based-indexing) Max. effectiveness = 16
+
+2. Another DP problem: An array of costs was given. You can either take two jumps forward or one jump backward. If you land on a particular index, you have to add the cost to your total. Find the minimum cost needed to cross the array or reach the end of the array.
+
+3. Advanced coding question: Graph. I don’t exactly remember the question as I didn’t attempt it.
+
+Section 2: 10 MCQs based on Dbms, Operating System, OOP’s, Data Structures, Algorithms, and Mathematical problems (Probability and so on). This section had negative marking.
+
+Section 3: 2 Subjective questions:  
+
+Write about your experience working in a team, where you were not the leader. What were your contributions?
+You have your final end semester examinations from next week, and you also have an interview with your dream company next week. What would you do?
+I could do the first two DP questions full and got most of the MCQs correct.
+
+
+
+
+32 students were selected for the next round.  
+
+*Focus on the MCQs and the subjective questions also. They are equally important. *  
+
+Round 2: F2F
+
+Total Time: 30–45mins
+
+This round was with one of the VP. He asked me to introduce myself. Then he moved on to my projects and internships. We discussed about my last internship, and I was asked to draw the whole pipeline or architecture of my internship project and the tools I used. Most of my work was in Deep Learning, NLP, Data Science so he started asking me basic questions from the aforementioned domains.
+
+Then he asked me one coding question and two puzzles.
+
+Coding question: I was given a graph-like structure like the following:
+
+Click to enlarge
+
+Question: From every node starting from the root, you can move to the next level and to the corresponding connected nodes. Find the maximum sum of values that you can obtain from the root to the last level.
+
+Solution: Bottom-up Dp approach, starting from the last level i.e the leaves. Keep on adding the maximum value that we can take from a particular layer to the upward layer.
+
+
+
+Formula: particular node(level i)=Max(node1 it is connected to(level i+1), node2 it is connected to(level i+1))
+
+Puzzles: https://www.geeksforgeeks.org/puzzle-25chessboard-and-dominos/
+
+And another mathematical puzzle which I have forgotten, but it is similar to the puzzles you will find on Geeksforgeeks.
+
+Try to solve as many puzzles as you can https://www.geeksforgeeks.org/puzzles/. More or less, similarly, modified puzzles will be asked.
+
+He then asked whether I was familiar with SQL and databases. I said I was. Then he asked me to write two basic queries, which I could. Some more basic questions about Normalizations(1NF, 2NF, 3NF, BCNF) and ACID properties were asked.
+
+Finally, he asked me whether I had any questions for him or not. So I asked some questions which I wanted to ask about the company, how is a regular day at Goldman Sachs different from other companies, and so on.
+
+This round went pretty well. He was satisfied with my interview and so was I. 14 were selected for the next round.
+
+Round 3: F2F
+
+Time: 1:20 hour to 1:30 hour
+
+This round was the most important one for me. The interviewer asked me questions related to my projects, internships, and tested my coding skills. We had a detailed discussion of two or three of my projects. He was also working on Deep Learning and thus asked detailed questions about different algorithms, optimization techniques, activation functions, different neural network models, and mathematical questions from ML, or DL. He even asked me how Google Colab works, as I stated I trained my models there. He wanted me to compare and contrast different approaches or algorithms. He asked me about the final approaches that I used and why did I use them.
+
+
+
+Coding questions:
+
+       1. Poisonous plants https://www.hackerrank.com/challenges/poisonous-plants/problem
+
+       Solution: https://github.com/abhranil08/Leetcode/blob/master/Stacks/poisonousPlants.java
+
+       2. Kth Smallest Element in a BST. 
+
+       Solution: https://www.geeksforgeeks.org/kth-smallest-element-in-bst-using-o1-extra-space/
+
+       Expected the Morris-traversal solution.
+
+       3. Implement Trie, Min-heap, Max-heap. I had to code down the implementations on a paper and the time & space complexities of their different functionalities as well.
+
+He asked some questions about Java, as I was coding in it. Questions were asked from Core java — OOPs concept, Constructors, Inheritance, Polymorphism — Input/Output questions from Runtime and compile-time polymorphism, Interfaces, and Abstraction. He also asked me about Redis, caching, and the MVCS architecture as I implemented it in one of my internships.
+
+Finally, we started discussing my hobbies and all. He was very friendly and cooperative.
+
+As usual, the interview ended with the question “Do you have any questions for me?”. In reply, I more or less asked the same type of questions as in my previous interview.
+
+
+
+This interview was also good according to me and boosted my confidence. I could write an efficient solution for the first question after some hints. As I was going in the right direction he gave me small hints which I understood. For the second question, I wrote the naive solution at first but after that he wanted me to improve. So after some time, I wrote the morris traversal solution. I had to think and come to the solution, hence it took me some time to code my final solution. Corner cases were checked for all the coding questions. I implemented Trie and Heaps in my first attempt.
+
+Round 4: F2F with the hiring manager
+
+Time: 30–35mins
+
+This round was with a senior VP.
+
+He didn’t want me to introduce myself as he stated that they had already discussed about the students. So he started with some CS topics:
+
+     1. Some common algorithms: DFS and BFS difference; union-find, shortest path algorithms difference (Dijkstra’s algorithm, Floyd’s algorithm, Bellman-Ford, Johnson’s algorithm).
+
+     2. How LinkedList, HashMap, HashSet works internally. Questions about self-balancing trees.
+
+     3. How can I solve the Resolving Dependency problem in a system? The solution would be Topological sorting. I just had to go through the algorithm.
+
+     4. Modification of the trapping rainwater problem. He wanted only the algorithm.
+
+     5. Some basic Operating system questions about Threads, two or three different scheduling algorithms, deadlocks, and semaphores. He gave me a problem on Semaphores and also asked me to implement an LRU cache (just the algorithm).
+
+
+
+Then, some HR questions followed:
+
+    1. I can see that most of your experience lies in Data Science but SUPPOSE I am not going to give you any work in Data Science but in application development, what are your thoughts about this?
+
+    2. Where do you see yourself in 5 years? (We had a very good discussion about my future plans.)
+
+    3. I can see that you represented your state in cricket and that you captained your university, how can you bring about a change in my team at Goldman Sachs?
+
+    4. I can see that you managed time pretty well by balancing both your cricket and studies, then why is your GPA low?
+
+    5. Why shouldn’t we hire you? (Be honest about these types of questions and don’t mug up all answers.)
+
+    6. Will you be happy about the fact that you will have to stop playing cricket as you start working for Goldman Sachs? I said Yes, so the follow-up question was, How can you be happy after devoting so much of your time in a sport and then working in an Investment Bank?
+
+    7. Do you have any questions for me?
+
+There were more HR questions but these were the most important ones.
+
+In this round, they were focussing mainly on how I communicated. For the CS topics, I only had to discuss the algorithms and was not asked to code. The HR questions were just to check how confident I was. I genuinely never prepared for these questions. I answered what honestly came to my mind.
+
+
+
+I exactly don’t remember the number of students called for the final round, but not all 14 of them had been called. Finally, 4 were selected.
+
+*Different approaches were asked for every coding question and the optimized solution was expected. Think out loud during the interview.*
+
+Verdict: Selected. 
+
+Things to remember:
+
+Don’t lie on your resume.
+Know all the common algorithms, their space, and time complexities.
+Think out loud during your interview, start with the worst solution, and come down to the most efficient one that you can think of. Throughout the whole process, let your interviewer know how you are approaching the solution. But DON’T ask dumb questions. Ask questions, but also think before everything you speak.
+Don’t mug up the HR questions. Be honest.
+Everyone’s opinion might differ with me on this, but it’s not mandatory for Goldman Sachs to have a stellar GPA. I myself had a low GPA among the good candidates. If you do have a low GPA try to have good projects, internships, or extracurriculars on your resume.
+Communication is very very very important. It’s not about your speaking skills but your confidence. Be confident.
+Take forward experiences from every interview. With every interview, you improve. Try not to think about your rejection or acceptance. This will make you nervous and stressed.
+Use the question “Do you have any questions for me?” as an opportunity to develop a good rapport with your interviewer.
+
+
+
+
+Round 1:  Online Coding Round
+
+2 Coding Questions in 2 hour time limit.
+
+Q1.  Given a number ‘x’, and a range of ‘y’ to ‘z’. Find the count of all numbers ‘n’ in that range such that the product of the number ‘n’ and ‘x’ does not contain any digit from the number ‘n’. Foreg if x=2, y=11, z=13, then, 
+
+for n=11, 2*11=22  //valid
+for n=12, 2*12=24  //invalid as 24 contains 2 from n=12
+for n=13, 2*13=26  //valid
+therefore, count=2 ( https://www.geeksforgeeks.org/count-numbers-in-range-such-that-digits-in-it-and-its-product-with-q-are-unequal/ )
+
+
+
+
+Q2.  A man is travelling from city A to city B. He starts with X amount of money. Everyday he spends some money and also he may work on some days to earn money. He may earn more than he spends on same day or he may spend more than what he earn on same day. You are given an array of integers which represent his net savings (earning-expense), find minimum amount of money he should begin with to ensure that he always have some money (>0) at the end of any day. ( https://www.geeksforgeeks.org/minimum-initial-energy-required-to-cross-street/ )
+ 
+Round 2:  Coderpad Round
+
+2 Coding Questions in 1 hour and brief discussion of the approach with the interviewer. Also write test for the code to run test cases.
+
+1. Implement Deque class and its methods in Java (approach taken using doubly ended queue).
+2. Trapping Rain Water: https://www.geeksforgeeks.org/trapping-rain-water/
+
+Round 3:  Interview Round – Technical 
+
+Asked about doubly linked list and how it works. Since it takes space, how would you optimize it by using single pointer ( I gave solution using XOR linked list ).
+Implement LRU Cache ( https://www.geeksforgeeks.org/lru-cache-implementation/ ).
+Difference between Comparator and Comparable. Given a user-defined class Employee and list of employees, sort the list according to the age of employees. What you will use to sort, comparator or comparable and Why? How will you decide when to use comparable and when to use comparator?
+Asked about Anonymous objects.
+Difference between == and equals().
+Internal working of HashMap in java. When to override equals() and when to override hashCode() method.
+Round 4:  Interview Round – Technical
+
+Given n, write recursive code to print fibonacci series upto n ( https://www.geeksforgeeks.org/tail-recursion-fibonacci/ ).
+Given length n, print all possible binary strings of length n ( https://www.geeksforgeeks.org/generate-all-the-binary-strings-of-n-bits/ ).
+Given time hh:mm. Find angle between minute and hour hand of clock. (https://www.geeksforgeeks.org/calculate-angle-hour-hand-minute-hand/)
+Given a largest dictionary of words, which data structure you would use to design a search option such that when you search for let say “typ”, it gives possible results from dictionary such as “typed”,”typing” etc. (I said Trie)
+Given two strings S and T. Find smallest substring in S which contains all characters of T.(https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/)
+Round 5:  Interview Round – Technical
+
+Given two link list where every node in link list denotes a single digit number. Find sum of both link list. Foreg- List A:  1->2->3, List B:  9->1->5, then sum will be:  1->0->3->8. (https://www.geeksforgeeks.org/add-two-numbers-represented-by-linked-lists/)
+In a single-threaded environment, find first non-repeating character in a string. (https://www.geeksforgeeks.org/given-a-string-find-its-first-non-repeating-character/)
+In a multi-threaded environment ( 4 threads ), find first non-repeating character in a long string and each thread should perform independently and concurrently. ( I divide the string into 4 substrings and let each thread resolve it independently in parallel and store index of non repeating char of substrings in hashmap and then return all 4 hashmaps to main thread. Then main thread will read 4 hashmaps and find final result of first non repeating character )
+How will you write tests for a function (unit tests). Asked about mocking and patching.
+Asked about dependency injection (due to my project on spring) and does it improves testing your application? If yes, How?
+Asked about singleton pattern.
+Round 6:  Interview Round – Hiring Manager
+
+Asked about current project in company in detail.
+Why leave current company?
+Why Goldman Sachs?
+Apart from technical, ever contributed on non-technical aspects in your current organization?
+Asked a bit about agile workflow.
+
+
+
+https://www.geeksforgeeks.org/minimum-initial-energy-required-to-cross-street/
+
+
+2.birthday party question: In a circle children are sitting (ordered. By ascending id) there is a random number D(1 to N) starting with D, distribute the toy to each sequential kid, until all toys distributed.but the last toy is damaged, the task is to find the number at which kid is sitting who get the damage toy
+
+
+Pangram question:
+
+You have given a string =”This is ram”, you need to find all those letters that are missing in the string out of all 26 a-z letters present in alphabets
+
+2. Given a sum, find the length of smallest subarray that has sum atleast to a given sum.
+
+https://www.geeksforgeeks.org/puzzle-1-how-to-measure-45-minutes-using-two-identical-wires/ f
+
+ handshaking Theorem .
+
+ https://www.geeksforgeeks.org/puzzle-24-10-coins-puzzle/  
+
+ Convert a BST to a sorted doubly linked list in place.
+
+ An array of N integers in the range [a, b].Five number is missing in an array of given range. Find five missing numbers.
+
+ Detecting loops in a doubly linked list.
+
+ Given a queue q1 with elements and an empty queue q2. You need to reverse q1 by using q2 or by using nothing.I got confused in this question as i cannot use recursion here .
+
+ What is git ? All git commands that I know ? What are branches in git ? Why use git ?
+
+ http://codeforces.com/contest/1000/problem/B
+
+ Design a stack that supports getMin() in O(1) time and O(1) extra space
+
+ Find the minimum number of coins that make a change.
+
+  Largest subarray with equal number of 0’s and 1’s.The array consists only of 0’s and 1’s.
+
+  Egg droping puzzle.
+  Minimum steps to reach target.
+
+  1. Reverse a string using library functions.
+2. Implement LRU cache.
+
+1. Find the missing number.
+2. A string is given consisting of only 0s, 1s and ‘?’s. Print all possible strings which can be generated by replacing the ‘?’s by either ‘0’ or ‘1’. Eg. if input is 1??0, then the possible output strings will be 1000, 1010, 1100, 1110.
+
+
+https://www.geeksforgeeks.org/form-minimum-number-from-given-sequence/)
+
+Number of ways to make coin change (https://www.geeksforgeeks.org/coin-change-dp-7/)
+Longest palindromic substring (https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/)
+
+Given an “insertions” list and a BST constructed from the insertions list by inserting elements from first to last,
+find all such possible insertion lists that would form the same BST as given in the input.
+
+Eg: Given input insertion list (10, 2, 1, 7, 14, 12) and the BST
+  10
+/    \
+2       14
+/  \       /
+1     7    12
+one possible insertion list would be (10, 14, 2, 1, 7, 12) since inserting the nodes from first to last in that order would yield the same BST as above.
+another such insertion list would be (10, 2, 14, 7, 1, 12)
+
+
+Reverse Linked-list from Kth node.
+
+ Coding question: Write a program to print all permutations of a given Number.
+
+ https://www.geeksforgeeks.org/value-to-be-subtracted-from-array-elements-to-make-sum-of-all-elements-equals-k/
+
+
+ Ques 1: https://www.geeksforgeeks.org/minimize-the-maximum-difference-between-the-heights/
+
+ Ques 2: https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/
+
+ Given cities and roads connecting them. Roads are of three types: type 1-> 2 wheelers road, type 2 -> 4-wheelers road and type 3-> both 2 and 4 wheelers road. The problem was to find the max number of roads that can be removed s.t a path exists for every pair of cities for each 2 wheelers and 4 wheelers.
+
+ Ques 2: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+ Find the min depth in a binary tree
+
+  https://www.interviewbit.com/problems/gas-station/
+
+  Normal segment tree with update operation on [l, r] and some constant value x  s.t add add x to a[l], x+1 to a[l+1], ……., x+r-l to a[r]. Normal range query i.e calculate the sum in [l, r].
+
+
+   https://www.cut-the-knot.org/pigeonhole/FiveCouples.shtml
+
+   iven a string like ‘UUUDULR’, need to derive the final coordinates starting from (0, 0). This is pretty easy and he is asked to add a few other test cases if I would like to. Not much to add as it is not having any corner cases.
+Given a dictionary, and a list of letters ( or consider as a string), find the longest word that only uses letters from the string.
+
+Count ways to reach the nth stair
+
+Question 1: String Implementation Question (Easy-Medium)
+Question 2: Print recurrent digits in braces. Slight Modification to this Ques: https://www.geeksforgeeks.org/find-recurring-sequence-fraction/Example:
+
+
+Question 1: Design a class in Java which implements the Deque interface. (i.e. Implement your own Double Ended Queue in Java without using any collections)7 methods to be implemented: addFirst(), addLast(), removeFirst(), removeLast(), peekFirst(), peekLast(), size()
+Question 2: In 2D matrix, the gold coin is given in each cell. From the bottom left corner, you have to reach the top right corner by collecting the maximum points. (Similar to this: Maximum sum path in a matrix from top to bottom)
+
+Boundary Traversal of binary tree
+
+: First non-repeating character
+
+ind-number-of-positional-elements)

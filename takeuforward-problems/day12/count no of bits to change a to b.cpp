@@ -50,8 +50,8 @@ int FlippedCount(int a, int b)
 // Driver code 
 int main() 
 { 
-	int a = 10; 
-	int b = 20; 
+	int a = 15; 
+	int b = 16; 
 	cout << FlippedCount(a, b)<<endl; 
 	return 0; 
 } 

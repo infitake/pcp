@@ -1,66 +1,58 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Method 1:
-int maxPrice(int arr[],int start,int end){
-	if(end<=start) return 0;
-	int maxprofit=0;
-	for(int i=start;i<end;i++){
-		for(int j=i+1;j<=end;j++){
-			if(arr[j]>arr[i]){
-				int max_curr = (arr[j]-arr[i])
-								+maxPrice(arr,start,i-1)
-								+maxPrice(arr,j+1,end);
-				maxprofit = max(max_curr,maxprofit);
-			}
-		}
-	}
-	return maxprofit;
-}
 
-// Method 2:
+
+// Method 1:
 // Find the local minima and store it as starting index. If not exists, return.
 // Find the local maxima. and store it as ending index. If we reach the end, set the end as ending index.
 // Update the solution (Increment count of buy sell pairs)
 // Repeat the above steps if end is not reached
 
-void stockBuySell(int price[], int n) 
+int stockBuySell(int arr[], int n) 
 { 
-    // Prices must be given for at least two days 
-    if (n == 1) 
-        return; 
-  
-    // Traverse through given price array 
-    int i = 0; 
-    while (i < n - 1) { 
+    int profit = 0;
+        int lastindex=0;
+        int n = arr.size();
+        int i=0;
+        while (i < n - 1) { 
   
         // Find Local Minima 
         // Note that the limit is (n-2) as we are 
         // comparing present element to the next element 
-        while ((i < n - 1) && (price[i + 1] <= price[i])) 
+        while ((i < n - 1) && (arr[i + 1] <= arr[i])) 
             i++; 
-  
-        // If we reached the end, break 
-        // as no further solution possible 
         if (i == n - 1) 
             break; 
   
         // Store the index of minima 
         int buy = i++; 
-  
-        // Find Local Maxima 
-        // Note that the limit is (n-1) as we are 
-        // comparing to previous element 
-        while ((i < n) && (price[i] >= price[i - 1])) 
-            i++; 
-  
-        // Store the index of maxima 
-        int sell = i - 1; 
-  
-        cout << "Buy on day: " << buy 
-             << "\t Sell on day: " << sell << endl; 
+            
+        int k=buy+1;
+        while(k<n){
+            if(arr[k]>=arr[k-1]) k++;
+            else{
+                profit = max(profit,(arr[k-1]-arr[buy]));
+                k++;
+            }
+        }
+        profit = max(profit,(arr[k-1]-arr[buy]));
     } 
+    return profit;
 }
+
+// Method 2:
+int maxPrice(int arr[],int n){
+	int minprofit = INT_MAX;
+    int n = arr.size();
+    for(int i=0;i<n;i++){
+        if(arr[i]<minprofit) minprofit = arr[i];
+        else if((arr[i]-minprofit)>maxprofit) maxprofit = (arr[i]-minprofit);
+    }
+    return maxprofit;
+}
+// time complexity:O(n)
+// space :O(1)
 
 int main() {
 	#ifndef ONLINE_JUDGE
@@ -75,7 +67,7 @@ int main() {
 		cin>>n;
 		int arr[n];
 		for(int i=0;i<n;i++) cin>>arr[i];
-		cout<<maxPrice(arr,0,n-1)<<endl;
+		cout<<stockBuySell(arr,n)<<endl;
 		
 	}
 	return 0;

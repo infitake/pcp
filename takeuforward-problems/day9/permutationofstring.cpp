@@ -65,7 +65,8 @@ int main() {
 	while(t--){
 		cin>>n;
 		cin>>str;
-		permutation(str,n,0);
+		// permutation(str,n,0);
+		permute(str,"");
 	}
 	return 0;
 }

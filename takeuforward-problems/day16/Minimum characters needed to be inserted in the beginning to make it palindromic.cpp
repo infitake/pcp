@@ -53,7 +53,7 @@ void generatelps(string arr,int lps[],int n){
 // If we observe the above approach carefully, we can find that it exhibits overlapping subproblems.
 // Suppose we want to find the minimum number of insertions in string “abcde”:
 
-//                       abcde
+//                   abcde
 //             /       |      \
 //            /        |        \
 //            bcde         abcd       bcd  <- case 3 is discarded as str[l] != str[h]

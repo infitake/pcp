@@ -32,7 +32,7 @@ void windowmax(vector<int> arr,int n,int k){
 	}
 	for(int j=k;j<n;j++){
 		cout<<arr[dq.front()]<< " ";
-		while(!dq.empty() && dq.back() <= j-k) dq.pop_front();
+		while(!dq.empty() && dq.front() <= j-k) dq.pop_front();
 		while(!dq.empty() && arr[j]>=arr[dq.back()]) dq.pop_back();
 		dq.push_back(j);
 	}
@@ -85,10 +85,9 @@ int main() {
 	//ios_base& scientific (ios_base& str);
 	int t,n,a,k; cin>>t;
 	while(t--){
-		cin>>n;
+		cin>>n>>k;
 		vector<int> arr;
 		for(int i=0;i<n;i++) {cin>>a;arr.push_back(a);}
-		cin>>k;
 		windowmax(arr,n,k);
 		
 	}
