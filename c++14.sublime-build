@@ -1,0 +1,25 @@
+{
+ 
+ "cmd":["bash", "-c", "g++ -std=c++14 -Wall '${file}' -o '/home/neo/io/${file_base_name}' && '/home/neo/io/${file_base_name}'"],
+ 
+ "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+ 
+ "working_dir": "/home/neo/io",
+ 
+ "selector": "source.c, source.c++",
+ 
+ "variants":
+ 
+ [
+ 
+   {
+ 
+     "name": "Run",
+ 
+     "cmd":["bash", "-c", "g++ -std=c++14 '${file}' -o '/home/neo/io/${file_base_name}' && '/home/neo/io/${file_base_name}'"]
+ 
+   }
+ 
+ ]
+ 
+}
