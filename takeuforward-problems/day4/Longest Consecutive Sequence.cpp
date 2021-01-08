@@ -28,26 +28,23 @@ int lcs(vector<int> arr,int n){
 // space O(1)
 
 // Method 2: (using Hash)
-int lcs(vector<int> arr,int n){
-	map<int,int> mp;
-	sort(arr.begin(),arr.end());
-	// for(auto x:arr) cout<<x<<" ";
-	for(int i=0;i<n;i++) mp[arr[i]]=i;
-	int sam,i=0,count=1,maxval=1;
-	for(auto x:mp){
-		if(i==0) { sam = x.first; i++; continue;}
-		i++;
-		if(x.first == sam +1){
-			count++;
-			sam=x.first;
-		}else{
-			maxval = max(maxval,count);
-			count=1;
-			sam=x.first;
-		}
-	}
-	maxval=max(maxval,count);
-	return maxval;
+int lcs(vector<int> nums,int n){
+	if(nums.size()==0) return 0;
+        map<int,int> mp;
+        for(auto x:nums) mp[x]++;
+        int i=0,minval,count=1,maxval=1;
+        for(auto x:mp){
+            if(i==0){
+                i++;
+                minval=x.first;
+                continue;
+            }
+            if(x.first == minval+1) count++;
+            else count = 1;
+            minval = x.first;
+            maxval = max(maxval,count);
+        }
+        return maxval;
 }
 // complexity O(n)
 // space O(n)

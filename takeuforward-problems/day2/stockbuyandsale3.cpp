@@ -4,8 +4,7 @@ using namespace std;
 
 
 // Method 2:
-int maxPrice(int arr[],int n){
-    int n=p.size();
+int stockBuySell(int p[],int n){
         if(n<2){
             return 0;
         }

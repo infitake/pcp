@@ -67,7 +67,8 @@ void setZeroes(vector<vector<int>>& arr) {
 // Method 2: Brute O(1) space.
 // Intuition
 
-// In the above approach we use additional memory to keep a track of rows and columns which need to be set to zero. This additional use of space can be avoided by manipulating the original array instead.
+// In the above approach we use additional memory to keep a track of rows and columns which need to be set to zero. 
+// This additional use of space can be avoided by manipulating the original array instead.
 
 // Algorithm
 class Solution {

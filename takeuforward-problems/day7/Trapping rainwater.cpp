@@ -2,11 +2,11 @@
 using namespace std;
 
 // Method 1:
-			//  _           _
-			// | |_       _| |
-			// | | |_   _| | |
-			// | | | |_| | | |
-			// | | | | | | | |
+//			    _           _
+//			   | |_       _| |
+//			   | | |_   _| | |
+//			   | | | |_| | | |
+//			   | | | | | | | |
 
 // you have to find the 2 max building around a index
 // so you can precompute the left and right max building for every index
@@ -88,7 +88,7 @@ int trappingwater(vector<int> arr){
 // If prev_index < size of the input array then subtract the temp variable from water, and loop from end of the input array to prev_index and find a wall greater than 
 // or equal to the previous wall (in this case, the last wall from backwards).
 
-nt maxWater(int arr[], int n) 
+int maxWater(int arr[], int n) 
     { 
         int size = n - 1; 
   
@@ -171,7 +171,7 @@ nt maxWater(int arr[], int n)
         // Return the maximum water 
         return water; 
     } 
-    mo
+
 int main() {
 	#ifndef ONLINE_JUDGE
     	freopen("input.txt", "r", stdin);

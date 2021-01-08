@@ -2,6 +2,21 @@
 using namespace std;
 #define ll long long
 
+// Method 0:
+// we can visualize the string "AB" as (26pow1)*1+(26pow0)*2
+// so first we reverese and then increase value of pow 
+
+// get number from the string
+int titleToNumber(string s) {
+    reverse(s.begin(),s.end());
+    long long p=1,res=0;
+    for(auto x:s){
+        res += (x-'A'+1) * p;
+        p = p*26;
+    }
+    return res;
+}
+
 // Method 1:
 // If remainder with 26 comes out to be 0 (meaning 26, 52 and so on)
  // then we put ‘Z’ in the output string and new n becomes n/26 -1 because here we are considering 26 to be ‘Z’ while in actual it’s 25th with respect to ‘A’.

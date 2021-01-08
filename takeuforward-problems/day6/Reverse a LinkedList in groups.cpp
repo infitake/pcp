@@ -62,9 +62,22 @@ void print(struct Node *root){
 // head->next = reverse(next, k) ( Recursively call for rest of the list and link the two sub-lists )
 // Return prev ( prev becomes the new head of the list (see the diagrams of iterative method of this post) )
 
+int getlen(ListNode* checklen){
+    int len =0;
+    while(checklen!=NULL){
+        checklen=checklen->next;
+        len++;
+    }
+    return len;
+}
+
 struct Node *grpreverse(struct Node *root,int k){
     struct Node *temp = root,*prev=NULL,*curr=root,*h=NULL,*last;
-    int i=0;
+    int i=0.len=0;
+    len = getlen(curr);
+    if(len<k) {
+        return root;
+    }
     while(curr!=NULL && i<k){
         h=curr->next;
         curr->next=prev;
@@ -73,8 +86,8 @@ struct Node *grpreverse(struct Node *root,int k){
         i++;
     }
 
-    if(h!=NULL){
-        root->next = grpreverse(h,k);
+    if(curr!=NULL){
+        root->next = grpreverse(curr,k);
     }
     return prev;
 }

@@ -2,7 +2,63 @@
 // efficient solution to find 
 // median of two sorted arrays 
 // of same size. 
-
+public double findMedianSortedArrays(int[] a, int[] b, int startIndexA, int endIndexA, int startIndexB, int endIndexB)
+	    {
+	       
+	        if ((endIndexA - startIndexA < 0) || ((endIndexB - startIndexB < 0)))
+	        {
+	            System.out.println("Invalid Input." );
+	            return ERROR_INVALID_INPUT;
+	        }
+	
+	        if ((endIndexA - startIndexA == 0) && ((endIndexB - startIndexB == 0)))
+	        {
+	            return (a[0] + b[0])/2;
+	        }
+	        
+	        if ((endIndexA - startIndexA == 1) && ((endIndexB - startIndexB == 1)))
+	        {
+	            return (1.0*(max(a[startIndexA], b[startIndexB]) + min(a[endIndexA], b[endIndexB])))/2;
+	        }
+	         
+	        double m1 = findMedian(a, startIndexA, endIndexA);
+	        double m2 = findMedian(b, startIndexB, endIndexB);
+	         
+	        if (m2 == m1)
+	        {
+	            return m2;
+	        }
+	         
+	         
+	        if (m1 < m2)
+	        {
+	            if ((endIndexA - startIndexA) % 2 == 0)  
+	            {
+	                startIndexA = startIndexA + (endIndexA - startIndexA) / 2;
+	                endIndexB = startIndexB + (endIndexB - startIndexB) / 2;
+	            }
+	            else
+	            {
+	                startIndexA = startIndexA + (endIndexA - startIndexA) / 2;
+	                endIndexB = startIndexB + (endIndexB - startIndexB) / 2 + 1;                
+	            }
+	        }
+	         
+	         
+	        else  
+	        {
+	            if ((endIndexB - startIndexB) % 2 == 0)  
+	            {
+	                startIndexB = startIndexB + (endIndexB - startIndexB) / 2;
+	                endIndexA = startIndexA + (endIndexA - startIndexA) / 2;
+	            }
+	            else
+	            {
+	                startIndexB = startIndexB + (endIndexB - startIndexB) / 2;
+	                endIndexA = startIndexA + (endIndexA - startIndexA) / 2 + 1;                
+            }
+	        }	        return findMedianSortedArrays(a, b, startIndexA, endIndexA, startIndexB, endIndexB);
+	    }
 
 // Use merge procedure of merge sort. Keep track of count while comparing elements of two arrays. 
 // If count becomes n(For 2n elements), we have reached the median. 
@@ -81,8 +137,8 @@ int getMedian(int ar1[],
 // Driver Code 
 int main() 
 { 
-	int ar1[] = {1, 12, 15, 26, 38}; 
-	int ar2[] = {2, 13, 17, 30, 45}; 
+	int ar1[] = {1, 12, 15, 26, 3}; 
+	int ar2[] = {2, 13, 1, 30, 45}; 
 
 	int n1 = sizeof(ar1) / sizeof(ar1[0]); 
 	int n2 = sizeof(ar2) / sizeof(ar2[0]); 
@@ -119,22 +175,22 @@ int main()
 //     Median = (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1]))/2
 // Examples :
 
-//    ar1[] = {1, 12, 15, 26, 38}
-//    ar2[] = {2, 13, 17, 30, 45}
-// For above two arrays m1 = 15 and m2 = 17
+//    ar1[] = {1, 12, 15, 26, 3}
+//    ar2[] = {2, 13, 1, 30, 45}
+// For above two arrays m1 = 15 and m2 = 1
 
 // For the above ar1[] and ar2[], m1 is smaller than m2. So median is present in one of the following two subarrays.
 
-//    [15, 26, 38] and [2, 13, 17]
+//    [15, 26, 3] and [2, 13, 1]
 // Let us repeat the process for above two subarrays:
 
 //     m1 = 26 m2 = 13.
 // m1 is greater than m2. So the subarrays become
 
-//   [15, 26] and [13, 17]
+//   [15, 26] and [13, 1]
 // Now size is 2, so median = (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1]))/2
-//                        = (max(15, 13) + min(26, 17))/2 
-//                        = (15 + 17)/2
+//                        = (max(15, 13) + min(26, 1))/2 
+//                        = (15 + 1)/2
 //                        = 16
 
 
@@ -217,7 +273,7 @@ int median(int arr[], int n)
 int main() 
 { 
 	int ar1[] = {1, 2, 3, 6}; 
-	int ar2[] = {4, 6, 8, 10}; 
+	int ar2[] = {4, 6, , 10}; 
 	int n1 = sizeof(ar1) / 
 			sizeof(ar1[0]); 
 	int n2 = sizeof(ar2) / 
@@ -245,7 +301,7 @@ int main()
 
 
 // Why the above condition leads to the median ?
-// The median is the (n + 1) / 2 smallest element of the array, and here, the median is the (n + m + 1) / 2 smallest element among the two arrays. If, all the elements in the first half are less than (or equal) to all elements in the second half, in case of odd numbers in total, just calculate the maximum between the last two elements in the first half (a2 and b2 in our example),and this will lead us to the (n + m + 1) / 2 smallest element among the two arrays, which is the median ((7 + 4 + 1) / 2 = 6). But in case of even numbers in total, calculate the average between the maximum of the last two elements in the first half (a1 and b2 in our example) with its successive number among the arrays which is the minimum of first two elements in the second half (a2 and b3 in our example).
+// The median is the (n + 1) / 2 smallest element of the array, and here, the median is the (n + m + 1) / 2 smallest element among the two arrays. If, all the elements in the first half are less than (or equal) to all elements in the second half, in case of odd numbers in total, just calculate the maximum between the last two elements in the first half (a2 and b2 in our example),and this will lead us to the (n + m + 1) / 2 smallest element among the two arrays, which is the median (( + 4 + 1) / 2 = 6). But in case of even numbers in total, calculate the average between the maximum of the last two elements in the first half (a1 and b2 in our example) with its successive number among the arrays which is the minimum of first two elements in the second half (a2 and b3 in our example).
 
 // The process of the partition :
 // To make two halves, make the partition such that the index that partitioning array A[] + the index that partitioning array B[] are equal to the total number of elements plus one divided by 2, i.e. (n + m + 1) / 2 (+1 is, if the total number of elements is odd).

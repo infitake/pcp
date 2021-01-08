@@ -27,7 +27,7 @@ int kUnique(string str,int n,int k){
 	for(int i=1;i<n;i++){
 		count[str[i]-'a']++;
 		end_u++;
-		if(!isvalid(count,k)){
+		while(!isvalid(count,k)){
 			count[str[start_u]-'a']--;
 			start_u++;
 		}

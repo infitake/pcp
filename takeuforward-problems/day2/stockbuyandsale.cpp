@@ -44,6 +44,7 @@ int stockBuySell(int arr[], int n)
 // Method 2:
 int maxPrice(int arr[],int n){
 	int minprofit = INT_MAX;
+	int maxprofit = 0;
     int n = arr.size();
     for(int i=0;i<n;i++){
         if(arr[i]<minprofit) minprofit = arr[i];

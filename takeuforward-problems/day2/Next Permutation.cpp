@@ -2,11 +2,11 @@
 using namespace std;
 
 // Method 1:(using stl function)
-void permutation(string str){
-	bool val = next_permutation(str.begin(),str.end());
-		if(val == false) cout<<"not exists"<<endl;
-		else cout<<str<<endl;
-}
+// void permutation(string str){
+// 	bool val = next_permutation(str.begin(),str.end());
+// 		if(val == false) cout<<"not exists"<<endl;
+// 		else cout<<str<<endl;
+// }
 
 // Method 2:
 // . The idea is based on the following facts:
@@ -55,6 +55,8 @@ void permutation(string str){
 	if(i<0) cout<<"nahi mile";
 	else{
 		int index = bsearch(str,i+1,l-1,str[i]);
+		cout<<str[i]<<endl;
+		cout<<upper_bound(str.begin()+i+1,str.end(),str[i])-str.begin()<<endl;
 		swap(&str[i],&str[index]);
 		rev(str,i+1,l-1);
 	}

@@ -83,9 +83,10 @@ Node* flatten(Node* root)
 			ptr = temp; 
 		} 
 		else { 
-			ptr->left = temp; 
+			ptr->right = temp; 
 			ptr = temp; 
 		} 
+		ptr->left = NULL;
 	} 
 
 	// Pointer to head node 

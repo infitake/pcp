@@ -46,7 +46,7 @@ int findcandidate(int arr[],int n){
 			count=1;
 		}
 	}
-	return max_ind;
+	return arr[max_ind];
 }
 
 bool ismajority(int arr[],int n,int cnd){
@@ -54,6 +54,7 @@ bool ismajority(int arr[],int n,int cnd){
 	for(int i=0;i<n;i++){
 		if(arr[i]==cnd) count++;
 	}
+	// cout<<count<<endl;
 	if(count>=ceil(n/2.0)) return true;
 	return false;
 }
@@ -61,7 +62,8 @@ bool ismajority(int arr[],int n,int cnd){
 
 int majorityElement(int arr[],int n){
 	int cnd = findcandidate(arr,n);
-	if(ismajority(arr,n,cnd)) return arr[cnd];
+	// cout<<cnd<<" "<<arr[cnd]<<endl;
+	if(ismajority(arr,n,cnd)) return cnd;
 	return -1; 
 }
 // complexity:O(n);
