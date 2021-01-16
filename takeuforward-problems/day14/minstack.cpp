@@ -165,7 +165,7 @@ struct MyStack
 		// variable minEle stores the minimum element 
 		// in the stack. 
 		else
-			cout <<"Minimum Element in the stack is: "
+			cout <<"Minimum Element in the stack is:6 "
 				<< minEle << "\n"; 
 	} 
 

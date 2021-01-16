@@ -45,11 +45,11 @@ void permute(string str, string out)
 } 
 
 // Method 3: (using stl function)
-void permutation(string str){
-	sort(str.begin(),str.end());
-	cout<<str<<endl;
-	while(next_permutation(str.begin(),str.end())) cout<<str<<endl;
-}
+// void permutation(string str){
+// 	sort(str.begin(),str.end());
+// 	cout<<str<<endl;
+// 	while(next_permutation(str.begin(),str.end())) cout<<str<<endl;
+// }
 
 
 int main() {

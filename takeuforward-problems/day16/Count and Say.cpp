@@ -31,6 +31,10 @@ string solve(ll n){
 
 int main()
 {
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+    #endif
     ll t,n; cin>>t;
     while(t--) {
         cin>>n;

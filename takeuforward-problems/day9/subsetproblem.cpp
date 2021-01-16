@@ -10,6 +10,7 @@ void subsetsumutil(vector<int> &arr,vector<int> &taken,int arr_size,int t_size,i
 	if(sum == actualsum){
 		print(taken,t_size);
 		if(index+1<arr_size && sum-arr[index]+arr[index+1]<=actualsum){
+			cout<<index+1<<" cc "<<arr[index]<<endl;
 			subsetsumutil(arr,taken,arr_size,t_size-1,sum-arr[index],index+1,actualsum);
 		}
 	}else{

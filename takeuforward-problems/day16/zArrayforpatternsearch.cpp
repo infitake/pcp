@@ -38,7 +38,7 @@ using namespace std;
 // Since length of pattern is 3, the value 3 in Z array 
 // indicates presence of pattern. 
 // How to construct Z array?
-//      A Simple Solution is two run two nested loops, the outer loop goes to every index and the inner loop finds length of the 
+//      A Simple Solution is to run two nested loops, the outer loop goes to every index and the inner loop finds length of the 
 // longest prefix that matches substring starting at current index. The time complexity of this solution is O(n2).
 
 //       We can construct Z array in linear time.

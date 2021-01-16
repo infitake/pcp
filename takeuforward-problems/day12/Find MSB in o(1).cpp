@@ -18,33 +18,33 @@ int msb(int n){
 // Time complexity is O(1).
 
 // Method 2
-int msb(int n){
-    if (n == 0) 
-        return 0; 
+// int msb(int n){
+//     if (n == 0) 
+//         return 0; 
   
-    int msb = 0; 
-    while (n != 0) { 
-        n = n / 2; 
-        msb++; 
-    } 
+//     int msb = 0; 
+//     while (n != 0) { 
+//         n = n / 2; 
+//         msb++; 
+//     } 
   
-    return (1 << msb); 
-} 
+//     return (1 << msb); 
+// } 
 
-// Method 3
+// // Method 3
 
-int msb(int n){ 
+// int msb(int n){ 
   
-    // To find the position 
-    // of the most significant 
-    // set bit 
-    int k = (int)(log2(n)); 
+//     // To find the position 
+//     // of the most significant 
+//     // set bit 
+//     int k = (int)(log2(n)); 
   
-    // To return the the value 
-    // of the number with set 
-    // bit at k-th position 
-    return (int)(pow(2, k)); 
-} 
+//     // To return the the value 
+//     // of the number with set 
+//     // bit at k-th position 
+//     return (int)(pow(2, k)); 
+// } 
 
 int main() {
 	#ifndef ONLINE_JUDGE

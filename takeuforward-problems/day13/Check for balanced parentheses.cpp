@@ -10,7 +10,7 @@ bool validparenthese(string str){
 			stk.pop();
 		}
 	}
-	return true;
+	return stk.size()==0;
 }
 
 int main() {

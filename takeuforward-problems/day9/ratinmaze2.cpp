@@ -11,7 +11,7 @@ void print(vector<vector<int>> &sol,int n){
 	cout<<endl;
 }
 
-bool issafe(vector<vector<int>> &arr,int n,int x,int y,vector<vector<bool>> &visited){
+bool issafe(vector<vector<int>> &arr,int x,int y,int n,vector<vector<bool>> &visited){
 	if(x==-1 || x==n || y==-1 || y==n || arr[x][y]==0 || visited[x][y]) return false;
 	return true;
 }
@@ -23,9 +23,8 @@ bool issafe(vector<vector<int>> &arr,int n,int x,int y,vector<vector<bool>> &vis
 // 0 0 0 0 1
 void ratinmaze2(vector<vector<int>> &arr,int n,int x,int y,string &path,vector<string> &finalpath,vector<vector<bool>> &visited){
 	if(x==-1 || x==n || y==-1 || y==n || arr[x][y]==0 || visited[x][y]) return;
-
 	if(x==n-1&&y==n-1){
-		cout<<path<<" ";
+		// cout<<path<<" ";
 		finalpath.push_back(path);
 		return;
 	} 
@@ -50,7 +49,6 @@ void ratinmaze2(vector<vector<int>> &arr,int n,int x,int y,string &path,vector<s
 		ratinmaze2(arr,n,x-1,y,path,finalpath,visited);
 		path.pop_back();
 	}
-	
 	visited[x][y]=false;
 }
 
@@ -77,10 +75,8 @@ int main() {
 		vector<vector<bool>> visited(n,vector<bool>(n,false));
 		string path;
 		vector<string> finalpath;
-
 		ratinmaze2(arr,n,0,0,path,finalpath,visited);
-		for(auto x:finalpath) cout<<x<<" ";
-		cout<<endl;
+		for(auto x:finalpath) cout<<x<<endl;
 	}
 	return 0;
 }

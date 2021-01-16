@@ -70,3 +70,58 @@ int main() {
   
     return 0; 
 }
+
+class LRUCache {
+public:
+    list<int>q;
+    map<int,pair<int,list<int>::iterator> >mp;
+    int n;
+    LRUCache(int capacity) {
+        n=capacity;
+    }
+    void move(int key)
+    {
+        q.erase(mp[key].second);
+        q.push_front(key);
+        mp[key].second=q.begin();
+    }
+    
+    int get(int key) {
+        if(mp.find(key)==mp.end())
+            return -1;
+        int ans=mp[key].first;
+       // mp.erase(key);
+        move(key);
+        return ans;
+        
+    }
+    
+    void put(int key, int val) {
+        if(mp.find(key)!=mp.end())
+        {
+            mp[key].first=val;
+            move(key);
+        }
+        else
+        {
+            q.push_front(key);
+            mp[key]={val,q.begin()};
+            n--;
+        }
+       
+        if(n<0)
+        {
+            n++;
+            mp.erase(q.back());
+            q.pop_back();
+        }
+        
+    }
+};
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
