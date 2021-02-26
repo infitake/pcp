@@ -2,10 +2,10 @@
 using namespace std;
 
 // Method 1:*using stl)
-// string reversestring(string str){ 
-// 	reverse(str.begin(),str.end());
-// 	return str;
-// }
+string reversestring(string str){ 
+	reverse(str.begin(),str.end());
+	return str;
+}
 // Method 2:*swaping the first and last
 // string reversestring(string str){																																																								
 // 	int n = str.size();
@@ -16,18 +16,18 @@ using namespace std;
 // 	return str;
 // }
 // Method 3:
-void reversestring(string &str){
-	int start=0;
-	for(int end=0;end<str.size();end++){
-		if(str[end] == ' '){
-			reverse(str.begin()+start,str.begin()+end);
-			start = end+1;
-		}
-	}
-	reverse(str.begin()+start,str.end());
-	reverse(str.begin(),str.end());
+// void reversestring(string &str){
+// 	int start=0;
+// 	for(int end=0;end<str.size();end++){
+// 		if(str[end] == ' '){
+// 			reverse(str.begin()+start,str.begin()+end);
+// 			start = end+1;
+// 		}
+// 	}
+// 	reverse(str.begin()+start,str.end());
+// 	reverse(str.begin(),str.end());
 
-}
+// }
 
 
 int main() {
@@ -41,11 +41,11 @@ int main() {
 	int t,n; cin>>t;
 	string str;
 	while(t--){
-		// cin>>str;
+		cin>>str;
 		// getline(cin,str);
-		str="you like this program very much";
-		reversestring(str);
-		cout<<str<<endl;
+		// str="you like this program very much";
+		cout<<reversestring(str)<<endl;
+		// cout<<str<<endl;
 	}
 	return 0;
 }

@@ -1,61 +1,62 @@
-/******************************************
-* AUTHOR : RAVINDER YADAV *
-* NICK : INFINITY *
-* INSTITUTION : NIT KURUKSHETRA *
-******************************************/
 #include <bits/stdc++.h>
-using namespace std;
 #define ll long long
 #define N 100005
 #define MOD 1000000007
 #define dd double
-#define pii pair<ll,ll>
-#define vec1 vector<ll>
-#define vec2 vector<ll,ll>
-#define rep(i, n) for(ll i = 0; i < n; i++)
-#define REP(i,a,b) for(ll i=a;i<b;i++)
-#define rep1(i,b) for(ll i=1;i<=b;i++)
+#define vec1 vector<int>
+#define pii pair<int,int>
+#define rep(i, n) for(int i = 0; i < n; i++)
+#define repd(i,n) for(int i=n-1;i>=0;i--)
+#define REP(i,a,b) for(int i=a;i<b;i++)
+#define rep1(i,b) for(int i=1;i<=b;i++)
 #define pb push_back
+#define ppb pop_back
 #define mp make_pair
 #define clr(x) x.clear()
-#define sz(x) ((ll)(x).size())
-#define S(x) scanf("%d",&(x))
-#define S2(x,y) scanf("%d%d",&(x),&(y))
-#define SL(x) scanf("%lld",&(x))
-#define SL2(x) scanf("%lld%lld",&(x),&(y))
-#define P(x) printf("%d\n",(x))
-#define FT first
-#define SN second
+#define sz(x) ((int)(x).size())
+#define initdp(a,b) for(int i=0;i<=a;i++)for(int j=0;j<=b;j++)dp[i][j]=-1;
+#define fi first
+#define se second
+#define mid(l,r) l+(r-l)/2
+#define removeduplicates(vec) vec.erase( unique( vec.begin(), vec.end() ), vec.end() )
+#define memset1(v) memset(v,-1,sizeof(v))
+#define memset0(v) memset(v,0,sizeof(v))
+using namespace std;
+int dx[4]={1,0,-1,0},dy[4]={0,1,0,-1};
+int ddx[8]={1,1,0,-1,-1,-1,0,1},ddy[8]={0,1,1,1,0,-1,-1,-1};
+ll gcd(ll a,ll b){ if(!a)return b;return gcd(b%a,a);}
 
-vector<bool> simpleSieve(int n){
-	std::vector<bool> is_prime(n+1,true);
-	is_prime[0]=false;
-	is_prime[1]=false;
-	for(int  i=2;i<=sqrt(n);i++){
-		if(is_prime[i]){
-			for(int j=i*i;j<n;j+=i){
-				is_prime[j]=false;
-			}
-		}
+void findpermutaion(vec1 &arr,int n,int index,vec1 &temp){
+	if(index == n) return;
+	for(auto x: temp) cout<<x<<" ";
+	cout<<endl;
+	for(int i=index;i<n;i++){
+		temp.pb(arr[i]);
+		findpermutaion(arr,n,index+1,temp);
+		temp.ppb();
 	}
-	// for(int i=0;i<n;i++){
-	// 	cout<<i<<" "<<is_prime[i]<<" "<<endl;
-	// }
-	return is_prime;
 }
 
 int main() {
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n; 
-	cin>>n;
-	std::vector<bool> v;
-	v = simpleSieve(n);
-	
-	for(int i=0;i<n;i++){
-		cout<<i<<" "<<v[i]<<" "<<endl;
+	int t,n,a; cin>>t;
+	while(t--){
+		cin>>n;
+		vec1 arr(n),temp;
+		rep(i,n){
+			cin>>arr[i];
+		}
+		findpermutaion(arr,n,0,temp);
 	}
-	cout<<endl;
 	return 0;
 }
+// don't settle on same approach
+// check for base cases n=0
+// write every possible case 
