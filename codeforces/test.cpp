@@ -1,73 +1,54 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
+#define ll long long
+#define N 100005
+#define MOD 1000000007
+#define dd double
+#define vec1 vector<int>
+#define pii pair<int,int>
+#define rep(i, n) for(int i = 0; i < n; i++)
+#define repd(i,n) for(int i=n-1;i>=0;i--)
+#define REP(i,a,b) for(int i=a;i<b;i++)
+#define rep1(i,b) for(int i=1;i<=b;i++)
+#define pb push_back
+#define ppb pop_back
+#define mp make_pair
+#define clr(x) x.clear()
+#define sz(x) ((int)(x).size())
+#define initdp(a,b) for(int i=0;i<=a;i++)for(int j=0;j<=b;j++)dp[i][j]=-1;
+#define fi first
+#define se second
+#define mid(l,r) l+(r-l)/2
+#define removeduplicates(vec) vec.erase( unique( vec.begin(), vec.end() ), vec.end() )
+#define memset1(v) memset(v,-1,sizeof(v))
+#define memset0(v) memset(v,0,sizeof(v))
 using namespace std;
-
-// loop and take a substring to compare
-// loop again from the corresponding index and compare with the original substring
-// Keep track of the longest pattern
-// Repeat the process and replace if another longer pattern has been found
-
-string PatternChaser(string str) {
-	string pattern, pattern2, result;
-	int count,high, index,index2;
-	index = high = 0;
-
-	// Loop to analyze any patterns within the string
-	do
-	{
-		for (int x = index; x < str.length(); x++)
-		{
-			pattern.push_back(str[x]); // begin analyzing the string to find a pattern to compare
-
-			// Once we have a pattern ex. ab
-			// Analyze the other values of the string to check if the pattern repeats
-			if (pattern.length() > 1) 
-			{
-				index2 = x + 1;
-				do
-				{
-					for (int y = index2; y < str.length(); y++)
-					{
-						pattern2.push_back(str[y]);
-
-						if (pattern2 == pattern && pattern.length() > high)
-						{
-							high = pattern.length();
-							result = pattern;
-						}
-						else if (pattern2.length() == pattern.length())
-						{
-							// reset back to analyze the other patterns and see if they match to the original
-							pattern2.clear(); 
-						}
-					}
-					pattern2.clear();
-					index2++;
-				} while (index2 < str.length());
-			}
-		}
-		pattern.clear();
-		index++;
-	} while (index < str.length());
-	
-	if (high)
-	{
-		return "yes " + result;
-	}
-	else
-	{
-		return "no null";
-	}
-}
+int dx[4]={1,0,-1,0},dy[4]={0,1,0,-1};
+int ddx[8]={1,1,0,-1,-1,-1,0,1},ddy[8]={0,1,1,1,0,-1,-1,-1};
+ll gcd(ll a,ll b){ if(!a)return b;return gcd(b%a,a);}
 
 int main() {
-	// keep this function call here
-	cout << PatternChaser("da2kr32a2") << endl; // yes a2
-	cout << PatternChaser("sskfssbbb9bbb") << endl; // yes bbb
-	cout << PatternChaser("aabecaa") << endl; //  yes aa
-	cout << PatternChaser("abbbaac") << endl; // no null
-	cout << PatternChaser("aabejiabkfabed") << endl; // yes abe
-	cout << PatternChaser("123224") << endl; // no null
-	cout << PatternChaser("aa2bbbaacbbb") << endl; // yes bbb
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	//ios_base& scientific (ios_base& str);
+	int t,n,a; cin>>t;
+	while(t--){
+		cin >> n;
+        int x = (n + 3) / 4;
+        for (int i = 0; i < n - x; ++i) {
+            cout << 9;
+        }
+        for (int i = 0; i < x; ++i) {
+            cout << 8;
+        }
+        cout << endl;
+	}
 	return 0;
 }
+// don't settle on same approach
+// check for base cases n=0
+// write every possible case 

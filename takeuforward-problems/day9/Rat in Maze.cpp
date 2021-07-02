@@ -17,7 +17,7 @@ bool issafe(vector<vector<int>> &arr,int n,int x,int y){
 
 bool ratinmaze(vector<vector<int>> &arr,vector<vector<int>> &sol,int n,int x,int y){
 	if(x==n-1&&y==n-1 && arr[x][y]==1){
-		sol[x][y]=1;
+		sol[x][y]=1; // sol array works as visited
 		print(sol,n);
 		return true;
 	}

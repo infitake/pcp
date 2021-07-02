@@ -26,6 +26,27 @@ int dx[4]={1,0,-1,0},dy[4]={0,1,0,-1};
 int ddx[8]={1,1,0,-1,-1,-1,0,1},ddy[8]={0,1,1,1,0,-1,-1,-1};
 ll gcd(ll a,ll b){ if(!a)return b;return gcd(b%a,a);}
 
+
+int MinSquares(int n) {
+	if (sqrt(n) - floor(sqrt(n)) == 0)
+        return 1;
+    if (n <= 3)
+        return n;
+
+    int res = n; 
+
+    for (int x = 1; x <= n; x++) 
+    {
+        int temp = x * x;
+        if (temp > n)
+            break;
+        else
+            res = min(res, 1 + getMinSquares
+                                  (n - temp));
+    }
+    return res;
+}
+
 int main() {
 	#ifndef ONLINE_JUDGE
 		freopen("input.txt", "r", stdin);
@@ -35,12 +56,15 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,k,a; cin>>t;
+	int t,n,a,w; cin>>t;
 	while(t--){
-		cin>>n>>k;
-		ll ans=1;
-		for(int i=0;i<k;i++) ans = (ans*n)%MOD;
-		cout<<ans<<endl;
+		cin>>n>>w;
+		vec1 arr(n);
+		rep(i,n){
+			cin>>arr[i];
+		}
+		cout<<MinSquares(n)<<endl;
+		// cout<<minSquare(arr,n,w)<<endl;
 	}
 	return 0;
 }

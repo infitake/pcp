@@ -35,11 +35,13 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//ios_base& scientific (ios_base& str);
-	ll t,n,k,a; cin>>t;
+	ll t,n,x,y; cin>>t;
 	while(t--){
-		cin>>n>>k;
-		ll ans=1;
-		for(int i=0;i<k;i++) ans = (ans*n)%MOD;
+		cin>>y>>x;
+		ll k = max(x,y);
+		ll ans = (k-1)*(k-1);
+		if(k&1) ans += (x+(k-y));
+		else ans += (y+(k-x));
 		cout<<ans<<endl;
 	}
 	return 0;

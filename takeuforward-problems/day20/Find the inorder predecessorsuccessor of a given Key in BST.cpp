@@ -119,9 +119,9 @@ int main()
         cout << "-1"; 
     return 0; 
 } 
-Output:
-Predecessor is 60
-Successor is 70
+// Output:
+// Predecessor is 60
+// Successor is 70
 
-Time Complexity: O(N)
-Auxiliary Space: O(1)
+// Time Complexity: O(N)
+// Auxiliary Space: O(1)
