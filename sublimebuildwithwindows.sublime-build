@@ -1,0 +1,25 @@
+{
+ 
+"cmd": ["g++.exe","-std=c++14", "${file}", "-o", "D:/io/${file_base_name}.exe", "&&" , "D:/io/${file_base_name}.exe<inputf.in>outputf.in"],
+  "shell":true,
+ "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+ 
+ "working_dir": "D:/io/",
+ 
+ "selector": "source.c, source.c++, source.cpp",
+ 
+ "variants":
+ 
+ [
+ 
+   {
+ 
+     "name": "Run",
+ 
+"cmd": ["g++.exe","-std=c++14", "${file}", "-o", "D:/io/${file_base_name}.exe", "&&" , "D:/io/${file_base_name}.exe<inputf.in>outputf.in"],
+ 
+   }
+ 
+ ]
+ 
+}

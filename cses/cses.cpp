@@ -27,24 +27,10 @@ int ddx[8]={1,1,0,-1,-1,-1,0,1},ddy[8]={0,1,1,1,0,-1,-1,-1};
 ll gcd(ll a,ll b){ if(!a)return b;return gcd(b%a,a);}
 
 int main() {
-	#ifndef ONLINE_JUDGE
-		freopen("input.txt", "r", stdin);
-		freopen("output.txt", "w", stdout);
-	#endif
-
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	//ios_base& scientific (ios_base& str);
-	ll t,n,x,y; cin>>t;
-	while(t--){
-		cin>>y>>x;
-		ll k = max(x,y);
-		ll ans = (k-1)*(k-1);
-		if(k&1) ans += (x+(k-y));
-		else ans += (y+(k-x));
-		cout<<ans<<endl;
-	}
-	return 0;
+	int a,b;cin>>a>>b;
+	cout<<"hello"<<"with new values"<<a<<" "<<b<<endl;
 }
 // don't settle on same approach
 // check for base cases n=0
