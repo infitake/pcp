@@ -1,0 +1,18 @@
+Dynamic programming:
+	2 Main condition to use DP : 1 Overlapping subproblem
+				     2 Optimal Substructure
+
+	Concepts Questions:
+		Longest Increasing Subsequence: we check for longest length
+
+			int lis[n];
+			lis[0]=1;
+			for(int i=1;i<n;i++){
+				lis[i]=1;
+				for(int j = 0;j<i;j++){
+					if(arr[i]>arr[j] && lis[i]<lis[j]+1)
+						lis[i] = lis[j]+1;
+				}
+			}
+			sort(lis,lis+n);
+			return lis[n-1];

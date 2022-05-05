@@ -55,19 +55,19 @@ int floor(Node* root,int k){
 }
 int kthsmallestDistance(Node* root,int &k){
 	if(!root) return -1;
-        int l = kthsmallestDistance(root->left,k);
-        if(l!=-1) return l;
-        if(k == 1) return root->data;
-        k--;
-        return kthsmallestDistance(root->right,k);
+    int l = kthsmallestDistance(root->left,k);
+    if(l!=-1) return l;
+    if(k == 1) return root->data;
+    k--;
+    return kthsmallestDistance(root->right,k);
 }
 int kthlargestDistance(Node* root,int &k){
 	if(!root) return INT_MAX;
-        int r = kthlargestDistance(root->right,k);
-        if(r!=INT_MAX) return r;
-        if(k == 1) return root->data;
-        k--;
-        return kthlargestDistance(root->left,k);
+    int r = kthlargestDistance(root->right,k);
+    if(r!=INT_MAX) return r;
+    if(k == 1) return root->data;
+    k--;
+    return kthlargestDistance(root->left,k);
 }
 
 // This method take O(n) extra space
@@ -225,7 +225,10 @@ int size(Node* root){
 // }
 // Method 2 for largestbstin bt (more effiecient)\
 // Method 2 (Tricky and Efficient)
-// In method 1, we traverse the tree in top down manner and do BST test for every node. If we traverse the tree in bottom up manner, then we can pass information about subtrees to the parent. The passed information can be used by the parent to do BST test (for parent node) only in constant time (or O(1) time). A left subtree need to tell the parent whether it is BST or not and also need to pass maximum value in it. So that we can compare the maximum value with the parent’s data to check the BST property. Similarly, the right subtree need to pass the minimum value up the tree. The subtrees need to pass the following information up the tree for the finding the largest BST.
+// In method 1, we traverse the tree in top down manner and do BST test for every node. If we traverse the tree in bottom up manner, then we can pass information about subtrees to the parent. 
+// The passed information can be used by the parent to do BST test (for parent node) only in constant time (or O(1) time). 
+// A left subtree need to tell the parent whether it is BST or not and also need to pass maximum value in it. So that we can compare the maximum value with the parent’s data to check the BST property. 
+// Similarly, the right subtree need to pass the minimum value up the tree. The subtrees need to pass the following information up the tree for the finding the largest BST.
 // 1) Whether the subtree itself is BST or not (In the following code, is_bst_ref is used for this purpose)
 // 2) If the subtree is left subtree of its parent, then maximum value in it. And if it is right subtree then minimum value in it.
 // 3) Size of this subtree if this subtree is BST (In the following code, return value of largestBSTtil() is used for this purpose)

@@ -1,0 +1,6 @@
+2 sum
+add 2 numbers
+median of 2 sorted arrays
+3 sum
+reverse integer
+longest substring without repeating characters

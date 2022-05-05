@@ -1,0 +1,46 @@
+Longest Substring w/o repeating character
+Hints: 	1. we have to only check the last occurence of a elemnt
+	2. create a vector of 256 and update the last occurance only
+
+Longest Palindromic substring
+Hints: 	1. create recursive function
+	2. think link mcm dp approach
+	3. because this is a substring then fix a index and go to both side of that index and check for pallindrome
+
+Construct BST from given keys
+Hints: 	1. we sort and get the mid and left part goes to left side of tree and vice versa
+	2. we can think of min and max (for left part min is Int_min and max is root) and 
+	   same for right part and do recurive calls for left and right part
+
+
+Imp Note: BT: We need both (preorder,inorder) || (postorder,inorder) to store binary tree information
+	  BST: We need only preorder or postorder traversal info
+
+2 Sum in BST
+Hints:	1. we use set like simple 2 sum in inorder and get the result(this take extra space)
+	2. first we get all the left elemtn and all the right element and then check the top value
+	   if value is less means we have to go to right in left stack lement
+	   if value is more then we have to go to left of right stack 
+
+BinaryTree to Doubly Linked list
+Hints: 	1. we keep in mind that root join to its predessere in left tree and its succersor in right tree
+	2. so before join left to root we have to find the predesser or succersor before joing right to root
+
+
+Triplet sum in BST:
+Hints: 	1. same as 2 sum in bst
+	2. use a extra root element and substract that extra element from that key
+
+SCC using kosaraju's algo
+Hints:	1. do a dfs and store node in a stk.
+	2. reverse the given directed graph
+	3. use the stack node to do a dfs on reversed graph
+
+Dijkstra's algo
+	We find shorted distance from source to every other edge
+
+How to Solve Crossword Puzzle Using Recursion | Backtracking Algorithm
+Point to Remember: you can enter a word in a single iteration
+you can place a word in - or a charcter is same as of word is here
+on removing if before placing that word some character is there so we can't remove those words (use a boolean array to keep track)
+(backtracking first check can we place horizontally if possible then place and backtrack if not then try for vertically) for every word

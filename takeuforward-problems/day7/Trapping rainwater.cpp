@@ -36,14 +36,14 @@ int trappingwater(vector<int> arr){
 	int n = arr.size(),l[n],r[n],res=0;
 	l[0]=arr[0];
 	r[n-1]=arr[n-1];
-		for(int j=1;j<n;j++){
-			l[j] = max(l[j-1],arr[j]);
-		}
-		for(int j=n-2;j>=0;j--){
-			r[j] = max(r[j+1],arr[j]);
-		}
-		for(int i=0;i<n;i++){
-		res += min(l[i],r[i])-arr[i];
+	for(int j=1;j<n;j++){
+		l[j] = max(l[j-1],arr[j]);
+	}
+	for(int j=n-2;j>=0;j--){
+		r[j] = max(r[j+1],arr[j]);
+	}
+	for(int i=0;i<n;i++){
+	res += min(l[i],r[i])-arr[i];
 	}
 	return res;
 }
